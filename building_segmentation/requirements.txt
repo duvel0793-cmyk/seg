@@ -1,0 +1,10 @@
+torch
+torchvision
+torchaudio
+numpy
+imageio
+Pillow
+einops
+timm==0.4.12
+fvcore
+triton
