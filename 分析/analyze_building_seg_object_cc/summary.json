@@ -1,0 +1,232 @@
+{
+  "inputs": {
+    "pred_mask_dir": "/home/ubuntu/code/lky/code/refactor/building_segmentation/outputs/train_run/eval_test/pred_masks",
+    "gt_dir": "/home/ubuntu/code/lky/data/xBD/test/targets",
+    "image_dir": null,
+    "output_dir": "/home/ubuntu/code/lky/code/refactor/xbd_building_eval/outputs/analyze_building_seg_object_cc"
+  },
+  "method": "cc",
+  "pred_method": "cc",
+  "gt_method": "cc",
+  "bucket_reference_gt_method": "cc",
+  "gt_fixed": true,
+  "bucket_reference_gt_fixed": true,
+  "instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "pred_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "gt_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "bucket_reference_gt_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "matching": {
+    "match_iou_threshold": 0.5,
+    "significant_overlap_threshold": 0.5
+  },
+  "overall_object_metrics": {
+    "tp": 24066,
+    "fp": 9909,
+    "fn": 11756,
+    "pred_instance_count": 33975,
+    "gt_instance_count": 35822,
+    "matched_instance_count": 24066,
+    "object_precision": 0.708344,
+    "object_recall": 0.671822,
+    "object_f1": 0.6896,
+    "mean_matched_iou": 0.782377,
+    "count_error": -1847,
+    "merge_count": 2649,
+    "split_count": 1657,
+    "merged_gt_instances": 7108,
+    "split_pred_instances": 3741
+  },
+  "coverage": {
+    "evaluation_set_size": 933,
+    "evaluated_images": 933,
+    "failed_images": 0,
+    "prediction_present_images": 933,
+    "missing_prediction_images": 0,
+    "provided_prediction_files": 933,
+    "unused_prediction_files": []
+  },
+  "bucket_recalls": {
+    "gt_area_bucket": {
+      "large": {
+        "gt_count": 30269,
+        "matched_count": 21849,
+        "recall": 0.721828,
+        "mean_matched_iou": 0.788645
+      },
+      "medium": {
+        "gt_count": 5233,
+        "matched_count": 2198,
+        "recall": 0.420027,
+        "mean_matched_iou": 0.721299
+      },
+      "small": {
+        "gt_count": 320,
+        "matched_count": 19,
+        "recall": 0.059375,
+        "mean_matched_iou": 0.64083
+      }
+    },
+    "image_density_bucket": {
+      "dense": {
+        "gt_count": 30837,
+        "matched_count": 20443,
+        "recall": 0.662937,
+        "mean_matched_iou": 0.780771
+      },
+      "medium": {
+        "gt_count": 4670,
+        "matched_count": 3399,
+        "recall": 0.727837,
+        "mean_matched_iou": 0.790789
+      },
+      "sparse": {
+        "gt_count": 315,
+        "matched_count": 224,
+        "recall": 0.711111,
+        "mean_matched_iou": 0.801348
+      }
+    },
+    "gt_area_by_density_bucket": {
+      "large__dense": {
+        "gt_count": 26824,
+        "matched_count": 18977,
+        "recall": 0.707463,
+        "mean_matched_iou": 0.785894
+      },
+      "large__medium": {
+        "gt_count": 3250,
+        "matched_count": 2699,
+        "recall": 0.830462,
+        "mean_matched_iou": 0.806161
+      },
+      "large__sparse": {
+        "gt_count": 195,
+        "matched_count": 173,
+        "recall": 0.887179,
+        "mean_matched_iou": 0.817173
+      },
+      "medium__dense": {
+        "gt_count": 3796,
+        "matched_count": 1452,
+        "recall": 0.382508,
+        "mean_matched_iou": 0.715147
+      },
+      "medium__medium": {
+        "gt_count": 1331,
+        "matched_count": 697,
+        "recall": 0.523666,
+        "mean_matched_iou": 0.731806
+      },
+      "medium__sparse": {
+        "gt_count": 106,
+        "matched_count": 49,
+        "recall": 0.462264,
+        "mean_matched_iou": 0.754124
+      },
+      "small__dense": {
+        "gt_count": 217,
+        "matched_count": 14,
+        "recall": 0.064516,
+        "mean_matched_iou": 0.643037
+      },
+      "small__medium": {
+        "gt_count": 89,
+        "matched_count": 3,
+        "recall": 0.033708,
+        "mean_matched_iou": 0.664769
+      },
+      "small__sparse": {
+        "gt_count": 14,
+        "matched_count": 2,
+        "recall": 0.142857,
+        "mean_matched_iou": 0.589471
+      }
+    }
+  },
+  "most_common_error_types": {
+    "gt_missed_reason": {
+      "merged_into_other": 5949,
+      "missed": 2785,
+      "unknown": 1615,
+      "boundary_fragmented": 705,
+      "heavily_undersegmented": 702
+    },
+    "pred_fp_type": {
+      "over_split_fragment": 4461,
+      "isolated_fp": 3102,
+      "oversized_merge": 1503,
+      "noisy_small_blob": 433,
+      "unknown": 410
+    }
+  },
+  "count_error_distribution": {
+    "count": 933,
+    "mean": -1.979636,
+    "median": 0.0,
+    "min": -241.0,
+    "max": 65.0,
+    "p10": -10.0,
+    "p90": 5.0,
+    "negative_count": 359,
+    "zero_count": 296,
+    "positive_count": 278
+  },
+  "merge_split_summary": {
+    "dominant_issue": "merge",
+    "total_merge_count": 2649,
+    "total_split_count": 1657,
+    "images_with_merge": 357,
+    "images_with_split": 338,
+    "merge_count_by_density_bucket": {
+      "sparse": 2,
+      "medium": 112,
+      "dense": 2535
+    },
+    "split_count_by_density_bucket": {
+      "sparse": 4,
+      "medium": 104,
+      "dense": 1549
+    },
+    "highest_merge_density_bucket": "dense",
+    "highest_split_density_bucket": "dense"
+  },
+  "merge_candidate_export": {
+    "enabled": false,
+    "candidate_count": 6989,
+    "min_score": 5,
+    "rules": [
+      "Candidate rows are filtered by suspicion_score >= merge_candidate_min_score.",
+      "Scores increase for larger predicted instances, denser images, crowded neighborhoods, multiple distance peaks, and multi-GT overlaps."
+    ],
+    "output_csv": null
+  },
+  "failed_files": []
+}
