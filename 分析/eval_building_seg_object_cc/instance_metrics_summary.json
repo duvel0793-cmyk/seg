@@ -1,0 +1,160 @@
+{
+  "protocol": {
+    "task": "building instance extraction and object-level evaluation on xBD pre-disaster masks",
+    "instance_extraction": "Foreground is defined as mask > 0. Connected components are extracted from binary masks.",
+    "instance_connectivity": "Default extraction uses 8-connected components.",
+    "bbox_convention": "bbox_xyxy is stored as [x1, y1, x2, y2] with x2/y2 as exclusive bounds.",
+    "matching_rule": "Predicted and GT instances are greedily matched one-to-one by descending instance IoU.",
+    "matching_iou_threshold": 0.5,
+    "merge_split_rule": "A merge is counted when one predicted instance significantly overlaps two or more GT instances; a split is counted when one GT instance significantly overlaps two or more predicted instances. Significant overlap is defined as intersection / min(area_pred, area_gt) >= 0.5.",
+    "empty_convention": "When both GT and prediction contain zero instances, object precision / recall / F1 are treated as 1.0 for that image."
+  },
+  "coverage": {
+    "evaluation_set_size": 933,
+    "evaluated_images": 933,
+    "failed_images": 0,
+    "prediction_present_images": 933,
+    "missing_prediction_images": 0,
+    "provided_prediction_files": 933,
+    "unused_prediction_files": []
+  },
+  "overall_metrics": {
+    "tp": 24066,
+    "fp": 9909,
+    "fn": 11756,
+    "pred_instance_count": 33975,
+    "gt_instance_count": 35822,
+    "matched_instance_count": 24066,
+    "object_precision": 0.708344,
+    "object_recall": 0.671822,
+    "object_f1": 0.6896,
+    "mean_matched_iou": 0.782377,
+    "count_error": -1847,
+    "merge_count": 2649,
+    "split_count": 1657,
+    "merged_gt_instances": 7108,
+    "split_pred_instances": 3741
+  },
+  "per_image_metrics": {
+    "object_precision": {
+      "mean": 0.765724,
+      "median": 0.8,
+      "std": 0.239611,
+      "min": 0.0,
+      "max": 1.0,
+      "p5": 0.333333,
+      "p25": 0.658537,
+      "p75": 1.0,
+      "p95": 1.0
+    },
+    "object_recall": {
+      "mean": 0.763014,
+      "median": 0.8,
+      "std": 0.238387,
+      "min": 0.0,
+      "max": 1.0,
+      "p5": 0.330496,
+      "p25": 0.632353,
+      "p75": 1.0,
+      "p95": 1.0
+    },
+    "object_f1": {
+      "mean": 0.749673,
+      "median": 0.778325,
+      "std": 0.237682,
+      "min": 0.0,
+      "max": 1.0,
+      "p5": 0.280519,
+      "p25": 0.639175,
+      "p75": 0.957576,
+      "p95": 1.0
+    },
+    "mean_matched_iou": {
+      "mean": 0.786111,
+      "median": 0.786795,
+      "std": 0.054579,
+      "min": 0.532258,
+      "max": 0.953664,
+      "p5": 0.702675,
+      "p25": 0.751303,
+      "p75": 0.822301,
+      "p95": 0.877534
+    },
+    "pred_instance_count": {
+      "mean": 36.414791,
+      "median": 12.0,
+      "std": 51.525875,
+      "min": 0.0,
+      "max": 426.0,
+      "p5": 0.0,
+      "p25": 1.0,
+      "p75": 53.0,
+      "p95": 146.0
+    },
+    "gt_instance_count": {
+      "mean": 38.394427,
+      "median": 13.0,
+      "std": 56.136994,
+      "min": 0.0,
+      "max": 419.0,
+      "p5": 0.0,
+      "p25": 2.0,
+      "p75": 53.0,
+      "p95": 158.0
+    },
+    "count_error": {
+      "mean": -1.979636,
+      "median": 0.0,
+      "std": 15.588031,
+      "min": -241.0,
+      "max": 65.0,
+      "p5": -17.0,
+      "p25": -2.0,
+      "p75": 1.0,
+      "p95": 11.4
+    },
+    "merge_count": {
+      "mean": 2.839228,
+      "median": 0.0,
+      "std": 7.013223,
+      "min": 0.0,
+      "max": 66.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 2.0,
+      "p95": 18.0
+    },
+    "split_count": {
+      "mean": 1.775991,
+      "median": 0.0,
+      "std": 4.44644,
+      "min": 0.0,
+      "max": 40.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 1.0,
+      "p95": 10.0
+    }
+  },
+  "failed_files": [],
+  "gt_input": "/home/ubuntu/code/lky/data/xBD/test/targets",
+  "pred_input": "/home/ubuntu/code/lky/code/refactor/building_segmentation/outputs/train_run/eval_test/pred_masks",
+  "gt_source_name": "gt",
+  "pred_source_name": "building_segmentation",
+  "method": "cc",
+  "min_instance_area": 16,
+  "connectivity": 8,
+  "distance_threshold": 2.0,
+  "min_seed_area": 4,
+  "opening_radius": 0,
+  "instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "start_index": 0,
+  "limit": 0
+}
