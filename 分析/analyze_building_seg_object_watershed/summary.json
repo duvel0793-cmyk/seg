@@ -1,0 +1,230 @@
+{
+  "inputs": {
+    "pred_mask_dir": "/home/ubuntu/code/lky/code/refactor/building_segmentation/outputs/train_run/eval_test/pred_masks",
+    "gt_dir": "/home/ubuntu/code/lky/data/xBD/test/targets",
+    "image_dir": null,
+    "output_dir": "/home/ubuntu/code/lky/code/refactor/xbd_building_eval/outputs/analyze_building_seg_object_watershed"
+  },
+  "method": "watershed",
+  "pred_method": "watershed",
+  "gt_method": "watershed",
+  "bucket_reference_gt_method": "watershed",
+  "instance_extraction": {
+    "method": "watershed",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "pred_instance_extraction": {
+    "method": "watershed",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "gt_instance_extraction": {
+    "method": "watershed",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "bucket_reference_gt_instance_extraction": {
+    "method": "watershed",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "matching": {
+    "match_iou_threshold": 0.5,
+    "significant_overlap_threshold": 0.5
+  },
+  "overall_object_metrics": {
+    "tp": 24911,
+    "fp": 9960,
+    "fn": 13775,
+    "pred_instance_count": 34871,
+    "gt_instance_count": 38686,
+    "matched_instance_count": 24911,
+    "object_precision": 0.714376,
+    "object_recall": 0.643928,
+    "object_f1": 0.677325,
+    "mean_matched_iou": 0.782225,
+    "count_error": -3815,
+    "merge_count": 3069,
+    "split_count": 1511,
+    "merged_gt_instances": 8974,
+    "split_pred_instances": 3356
+  },
+  "coverage": {
+    "evaluation_set_size": 933,
+    "evaluated_images": 933,
+    "failed_images": 0,
+    "prediction_present_images": 933,
+    "missing_prediction_images": 0,
+    "provided_prediction_files": 933,
+    "unused_prediction_files": []
+  },
+  "bucket_recalls": {
+    "gt_area_bucket": {
+      "large": {
+        "gt_count": 32289,
+        "matched_count": 22554,
+        "recall": 0.698504,
+        "mean_matched_iou": 0.788883
+      },
+      "medium": {
+        "gt_count": 5996,
+        "matched_count": 2336,
+        "recall": 0.389593,
+        "mean_matched_iou": 0.719143
+      },
+      "small": {
+        "gt_count": 401,
+        "matched_count": 21,
+        "recall": 0.052369,
+        "mean_matched_iou": 0.648301
+      }
+    },
+    "image_density_bucket": {
+      "dense": {
+        "gt_count": 33578,
+        "matched_count": 21243,
+        "recall": 0.632646,
+        "mean_matched_iou": 0.780694
+      },
+      "medium": {
+        "gt_count": 4794,
+        "matched_count": 3449,
+        "recall": 0.719441,
+        "mean_matched_iou": 0.790567
+      },
+      "sparse": {
+        "gt_count": 314,
+        "matched_count": 219,
+        "recall": 0.697452,
+        "mean_matched_iou": 0.799336
+      }
+    },
+    "gt_area_by_density_bucket": {
+      "large__dense": {
+        "gt_count": 28778,
+        "matched_count": 19655,
+        "recall": 0.682987,
+        "mean_matched_iou": 0.786243
+      },
+      "large__medium": {
+        "gt_count": 3319,
+        "matched_count": 2729,
+        "recall": 0.822236,
+        "mean_matched_iou": 0.806277
+      },
+      "large__sparse": {
+        "gt_count": 192,
+        "matched_count": 170,
+        "recall": 0.885417,
+        "mean_matched_iou": 0.814825
+      },
+      "medium__dense": {
+        "gt_count": 4513,
+        "matched_count": 1574,
+        "recall": 0.34877,
+        "mean_matched_iou": 0.712616
+      },
+      "medium__medium": {
+        "gt_count": 1375,
+        "matched_count": 715,
+        "recall": 0.52,
+        "mean_matched_iou": 0.731336
+      },
+      "medium__sparse": {
+        "gt_count": 108,
+        "matched_count": 47,
+        "recall": 0.435185,
+        "mean_matched_iou": 0.752241
+      },
+      "small__dense": {
+        "gt_count": 287,
+        "matched_count": 14,
+        "recall": 0.04878,
+        "mean_matched_iou": 0.643037
+      },
+      "small__medium": {
+        "gt_count": 100,
+        "matched_count": 5,
+        "recall": 0.05,
+        "mean_matched_iou": 0.686573
+      },
+      "small__sparse": {
+        "gt_count": 14,
+        "matched_count": 2,
+        "recall": 0.142857,
+        "mean_matched_iou": 0.589471
+      }
+    }
+  },
+  "most_common_error_types": {
+    "gt_missed_reason": {
+      "merged_into_other": 7687,
+      "missed": 2970,
+      "unknown": 1769,
+      "heavily_undersegmented": 718,
+      "boundary_fragmented": 631
+    },
+    "pred_fp_type": {
+      "over_split_fragment": 4164,
+      "isolated_fp": 3246,
+      "oversized_merge": 1795,
+      "unknown": 414,
+      "noisy_small_blob": 341
+    }
+  },
+  "count_error_distribution": {
+    "count": 933,
+    "mean": -4.08896,
+    "median": 0.0,
+    "min": -481.0,
+    "max": 66.0,
+    "p10": -14.0,
+    "p90": 4.0,
+    "negative_count": 384,
+    "zero_count": 300,
+    "positive_count": 249
+  },
+  "merge_split_summary": {
+    "dominant_issue": "merge",
+    "total_merge_count": 3069,
+    "total_split_count": 1511,
+    "images_with_merge": 372,
+    "images_with_split": 319,
+    "merge_count_by_density_bucket": {
+      "sparse": 4,
+      "medium": 135,
+      "dense": 2930
+    },
+    "split_count_by_density_bucket": {
+      "sparse": 3,
+      "medium": 103,
+      "dense": 1405
+    },
+    "highest_merge_density_bucket": "dense",
+    "highest_split_density_bucket": "dense"
+  },
+  "merge_candidate_export": {
+    "enabled": false,
+    "candidate_count": 7332,
+    "min_score": 5,
+    "rules": [
+      "Candidate rows are filtered by suspicion_score >= merge_candidate_min_score.",
+      "Scores increase for larger predicted instances, denser images, crowded neighborhoods, multiple distance peaks, and multi-GT overlaps."
+    ],
+    "output_csv": null
+  },
+  "failed_files": []
+}
