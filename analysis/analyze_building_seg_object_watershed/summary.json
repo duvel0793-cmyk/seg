@@ -1,0 +1,293 @@
+{
+  "inputs": {
+    "pred_mask_dir": "/home/lky/code/new/building_segmentation/outputs/train_run/eval_test/pred_masks",
+    "gt_dir": "/home/lky/data/xBD/test/targets",
+    "image_dir": "/home/lky/data/xBD/test/images",
+    "output_dir": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed"
+  },
+  "method": "watershed",
+  "pred_method": "watershed",
+  "gt_method": "cc",
+  "bucket_reference_gt_method": "cc",
+  "gt_fixed": true,
+  "bucket_reference_gt_fixed": true,
+  "instance_extraction": {
+    "method": "watershed",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "pred_instance_extraction": {
+    "method": "watershed",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "gt_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "bucket_reference_gt_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "matching": {
+    "match_iou_threshold": 0.5,
+    "significant_overlap_threshold": 0.5
+  },
+  "overall_object_metrics": {
+    "tp": 24558,
+    "fp": 10311,
+    "fn": 11264,
+    "pred_instance_count": 34869,
+    "gt_instance_count": 35822,
+    "matched_instance_count": 24558,
+    "object_precision": 0.704293,
+    "object_recall": 0.685556,
+    "object_f1": 0.694798,
+    "mean_matched_iou": 0.782961,
+    "count_error": -953,
+    "merge_count": 2417,
+    "split_count": 1910,
+    "merged_gt_instances": 6386,
+    "split_pred_instances": 4370
+  },
+  "coverage": {
+    "evaluation_set_size": 933,
+    "evaluated_images": 933,
+    "failed_images": 0,
+    "prediction_present_images": 933,
+    "missing_prediction_images": 0,
+    "provided_prediction_files": 933,
+    "unused_prediction_files": []
+  },
+  "bucket_recalls": {
+    "gt_area_bucket": {
+      "large": {
+        "gt_count": 30269,
+        "matched_count": 22281,
+        "recall": 0.7361,
+        "mean_matched_iou": 0.789424
+      },
+      "medium": {
+        "gt_count": 5233,
+        "matched_count": 2257,
+        "recall": 0.431301,
+        "mean_matched_iou": 0.720423
+      },
+      "small": {
+        "gt_count": 320,
+        "matched_count": 20,
+        "recall": 0.0625,
+        "mean_matched_iou": 0.640038
+      }
+    },
+    "image_density_bucket": {
+      "dense": {
+        "gt_count": 30837,
+        "matched_count": 20919,
+        "recall": 0.678373,
+        "mean_matched_iou": 0.781401
+      },
+      "medium": {
+        "gt_count": 4670,
+        "matched_count": 3415,
+        "recall": 0.731263,
+        "mean_matched_iou": 0.791309
+      },
+      "sparse": {
+        "gt_count": 315,
+        "matched_count": 224,
+        "recall": 0.711111,
+        "mean_matched_iou": 0.80136
+      }
+    },
+    "gt_area_by_density_bucket": {
+      "large__dense": {
+        "gt_count": 26824,
+        "matched_count": 19403,
+        "recall": 0.723345,
+        "mean_matched_iou": 0.78673
+      },
+      "large__medium": {
+        "gt_count": 3250,
+        "matched_count": 2705,
+        "recall": 0.832308,
+        "mean_matched_iou": 0.806971
+      },
+      "large__sparse": {
+        "gt_count": 195,
+        "matched_count": 173,
+        "recall": 0.887179,
+        "mean_matched_iou": 0.817188
+      },
+      "medium__dense": {
+        "gt_count": 3796,
+        "matched_count": 1502,
+        "recall": 0.39568,
+        "mean_matched_iou": 0.713847
+      },
+      "medium__medium": {
+        "gt_count": 1331,
+        "matched_count": 706,
+        "recall": 0.530428,
+        "mean_matched_iou": 0.732074
+      },
+      "medium__sparse": {
+        "gt_count": 106,
+        "matched_count": 49,
+        "recall": 0.462264,
+        "mean_matched_iou": 0.754124
+      },
+      "small__dense": {
+        "gt_count": 217,
+        "matched_count": 14,
+        "recall": 0.064516,
+        "mean_matched_iou": 0.643037
+      },
+      "small__medium": {
+        "gt_count": 89,
+        "matched_count": 4,
+        "recall": 0.044944,
+        "mean_matched_iou": 0.654827
+      },
+      "small__sparse": {
+        "gt_count": 14,
+        "matched_count": 2,
+        "recall": 0.142857,
+        "mean_matched_iou": 0.589471
+      }
+    }
+  },
+  "most_common_error_types": {
+    "gt_missed_reason": {
+      "merged_into_other": 5342,
+      "missed": 2835,
+      "unknown": 1558,
+      "boundary_fragmented": 808,
+      "heavily_undersegmented": 721
+    },
+    "pred_fp_type": {
+      "over_split_fragment": 4917,
+      "isolated_fp": 3247,
+      "oversized_merge": 1387,
+      "unknown": 420,
+      "noisy_small_blob": 340
+    }
+  },
+  "count_error_distribution": {
+    "count": 933,
+    "mean": -1.021436,
+    "median": 0.0,
+    "min": -208.0,
+    "max": 76.0,
+    "p10": -9.0,
+    "p90": 6.0,
+    "negative_count": 335,
+    "zero_count": 298,
+    "positive_count": 300
+  },
+  "merge_split_summary": {
+    "dominant_issue": "merge",
+    "total_merge_count": 2417,
+    "total_split_count": 1910,
+    "images_with_merge": 338,
+    "images_with_split": 353,
+    "merge_count_by_density_bucket": {
+      "sparse": 2,
+      "medium": 96,
+      "dense": 2319
+    },
+    "split_count_by_density_bucket": {
+      "sparse": 3,
+      "medium": 124,
+      "dense": 1783
+    },
+    "highest_merge_density_bucket": "dense",
+    "highest_split_density_bucket": "dense"
+  },
+  "merge_candidate_export": {
+    "enabled": true,
+    "candidate_count": 7064,
+    "total_candidates": 7064,
+    "selected_candidate_count": 200,
+    "exported_candidates": 200,
+    "min_score": 5,
+    "topk": 200,
+    "max_per_image": 10,
+    "patch_margin": 48,
+    "score_quantiles": {
+      "count": 7064,
+      "mean": 6.117922,
+      "median": 5.0,
+      "min": 5.0,
+      "max": 12.0,
+      "p10": 5.0,
+      "p90": 9.0,
+      "negative_count": 0,
+      "zero_count": 0,
+      "positive_count": 7064
+    },
+    "count_by_density_bucket": {
+      "dense": 6948,
+      "medium": 115,
+      "sparse": 1
+    },
+    "count_by_local_density_bucket": {
+      "dense": 5777,
+      "medium": 837,
+      "sparse": 450
+    },
+    "count_by_score_bucket": {
+      "5": 3988,
+      "6": 1109,
+      "7": 382,
+      "8": 700,
+      "9": 512,
+      "10": 363,
+      "11": 9,
+      "12": 1
+    },
+    "coverage_topn": {
+      "100": {
+        "candidate_count": 100,
+        "merge_heavy_images_hit": 22,
+        "merge_heavy_images_coverage": 0.647059,
+        "merged_into_other_hit_count": 681,
+        "merged_into_other_coverage": 0.12748
+      },
+      "200": {
+        "candidate_count": 200,
+        "merge_heavy_images_hit": 25,
+        "merge_heavy_images_coverage": 0.735294,
+        "merged_into_other_hit_count": 1071,
+        "merged_into_other_coverage": 0.200487
+      }
+    },
+    "rules": [
+      "Candidate rows are filtered by suspicion_score >= merge_candidate_min_score.",
+      "merge_candidates.csv keeps the full filtered pool; merge_candidates_top.csv applies global top-k plus per-image caps.",
+      "Scores increase for larger predicted instances, denser images, crowded neighborhoods, multiple distance peaks, and multi-GT overlaps."
+    ],
+    "output_csv": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidates.csv",
+    "output_top_csv": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidates_top.csv",
+    "output_summary_json": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidate_summary.json",
+    "output_patch_manifest": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/patch_manifest.csv",
+    "output_patch_dir": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidate_patches",
+    "output_report_md": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidate_report.md",
+    "image_crop_count": 200
+  },
+  "failed_files": []
+}

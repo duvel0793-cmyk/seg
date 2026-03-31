@@ -1,0 +1,293 @@
+{
+  "inputs": {
+    "pred_mask_dir": "/home/lky/code/new/building_segmentation/outputs/train_run/eval_test/pred_masks",
+    "gt_dir": "/home/lky/data/xBD/test/targets",
+    "image_dir": "/home/lky/data/xBD/test/images",
+    "output_dir": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_cc"
+  },
+  "method": "cc",
+  "pred_method": "cc",
+  "gt_method": "cc",
+  "bucket_reference_gt_method": "cc",
+  "gt_fixed": true,
+  "bucket_reference_gt_fixed": true,
+  "instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "pred_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "gt_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "bucket_reference_gt_instance_extraction": {
+    "method": "cc",
+    "min_instance_area": 16,
+    "connectivity": 8,
+    "distance_threshold": 2.0,
+    "min_seed_area": 4,
+    "opening_radius": 0
+  },
+  "matching": {
+    "match_iou_threshold": 0.5,
+    "significant_overlap_threshold": 0.5
+  },
+  "overall_object_metrics": {
+    "tp": 24066,
+    "fp": 9907,
+    "fn": 11756,
+    "pred_instance_count": 33973,
+    "gt_instance_count": 35822,
+    "matched_instance_count": 24066,
+    "object_precision": 0.708386,
+    "object_recall": 0.671822,
+    "object_f1": 0.68962,
+    "mean_matched_iou": 0.782378,
+    "count_error": -1849,
+    "merge_count": 2649,
+    "split_count": 1657,
+    "merged_gt_instances": 7108,
+    "split_pred_instances": 3741
+  },
+  "coverage": {
+    "evaluation_set_size": 933,
+    "evaluated_images": 933,
+    "failed_images": 0,
+    "prediction_present_images": 933,
+    "missing_prediction_images": 0,
+    "provided_prediction_files": 933,
+    "unused_prediction_files": []
+  },
+  "bucket_recalls": {
+    "gt_area_bucket": {
+      "large": {
+        "gt_count": 30269,
+        "matched_count": 21849,
+        "recall": 0.721828,
+        "mean_matched_iou": 0.788645
+      },
+      "medium": {
+        "gt_count": 5233,
+        "matched_count": 2198,
+        "recall": 0.420027,
+        "mean_matched_iou": 0.721306
+      },
+      "small": {
+        "gt_count": 320,
+        "matched_count": 19,
+        "recall": 0.059375,
+        "mean_matched_iou": 0.64083
+      }
+    },
+    "image_density_bucket": {
+      "dense": {
+        "gt_count": 30837,
+        "matched_count": 20443,
+        "recall": 0.662937,
+        "mean_matched_iou": 0.780771
+      },
+      "medium": {
+        "gt_count": 4670,
+        "matched_count": 3399,
+        "recall": 0.727837,
+        "mean_matched_iou": 0.790794
+      },
+      "sparse": {
+        "gt_count": 315,
+        "matched_count": 224,
+        "recall": 0.711111,
+        "mean_matched_iou": 0.80136
+      }
+    },
+    "gt_area_by_density_bucket": {
+      "large__dense": {
+        "gt_count": 26824,
+        "matched_count": 18977,
+        "recall": 0.707463,
+        "mean_matched_iou": 0.785894
+      },
+      "large__medium": {
+        "gt_count": 3250,
+        "matched_count": 2699,
+        "recall": 0.830462,
+        "mean_matched_iou": 0.806162
+      },
+      "large__sparse": {
+        "gt_count": 195,
+        "matched_count": 173,
+        "recall": 0.887179,
+        "mean_matched_iou": 0.817188
+      },
+      "medium__dense": {
+        "gt_count": 3796,
+        "matched_count": 1452,
+        "recall": 0.382508,
+        "mean_matched_iou": 0.715148
+      },
+      "medium__medium": {
+        "gt_count": 1331,
+        "matched_count": 697,
+        "recall": 0.523666,
+        "mean_matched_iou": 0.731829
+      },
+      "medium__sparse": {
+        "gt_count": 106,
+        "matched_count": 49,
+        "recall": 0.462264,
+        "mean_matched_iou": 0.754124
+      },
+      "small__dense": {
+        "gt_count": 217,
+        "matched_count": 14,
+        "recall": 0.064516,
+        "mean_matched_iou": 0.643037
+      },
+      "small__medium": {
+        "gt_count": 89,
+        "matched_count": 3,
+        "recall": 0.033708,
+        "mean_matched_iou": 0.664769
+      },
+      "small__sparse": {
+        "gt_count": 14,
+        "matched_count": 2,
+        "recall": 0.142857,
+        "mean_matched_iou": 0.589471
+      }
+    }
+  },
+  "most_common_error_types": {
+    "gt_missed_reason": {
+      "merged_into_other": 5949,
+      "missed": 2786,
+      "unknown": 1614,
+      "boundary_fragmented": 705,
+      "heavily_undersegmented": 702
+    },
+    "pred_fp_type": {
+      "over_split_fragment": 4460,
+      "isolated_fp": 3101,
+      "oversized_merge": 1503,
+      "noisy_small_blob": 433,
+      "unknown": 410
+    }
+  },
+  "count_error_distribution": {
+    "count": 933,
+    "mean": -1.981779,
+    "median": 0.0,
+    "min": -241.0,
+    "max": 65.0,
+    "p10": -10.0,
+    "p90": 5.0,
+    "negative_count": 359,
+    "zero_count": 296,
+    "positive_count": 278
+  },
+  "merge_split_summary": {
+    "dominant_issue": "merge",
+    "total_merge_count": 2649,
+    "total_split_count": 1657,
+    "images_with_merge": 357,
+    "images_with_split": 338,
+    "merge_count_by_density_bucket": {
+      "sparse": 2,
+      "medium": 112,
+      "dense": 2535
+    },
+    "split_count_by_density_bucket": {
+      "sparse": 4,
+      "medium": 104,
+      "dense": 1549
+    },
+    "highest_merge_density_bucket": "dense",
+    "highest_split_density_bucket": "dense"
+  },
+  "merge_candidate_export": {
+    "enabled": false,
+    "candidate_count": 6989,
+    "total_candidates": 6989,
+    "selected_candidate_count": 200,
+    "exported_candidates": 0,
+    "min_score": 5,
+    "topk": 200,
+    "max_per_image": 10,
+    "patch_margin": 48,
+    "score_quantiles": {
+      "count": 6989,
+      "mean": 6.317785,
+      "median": 5.0,
+      "min": 5.0,
+      "max": 12.0,
+      "p10": 5.0,
+      "p90": 9.0,
+      "negative_count": 0,
+      "zero_count": 0,
+      "positive_count": 6989
+    },
+    "count_by_density_bucket": {
+      "dense": 6851,
+      "medium": 137,
+      "sparse": 1
+    },
+    "count_by_local_density_bucket": {
+      "dense": 5639,
+      "medium": 753,
+      "sparse": 597
+    },
+    "count_by_score_bucket": {
+      "5": 3677,
+      "6": 1038,
+      "7": 462,
+      "8": 714,
+      "9": 585,
+      "10": 352,
+      "11": 121,
+      "12": 40
+    },
+    "coverage_topn": {
+      "100": {
+        "candidate_count": 100,
+        "merge_heavy_images_hit": 24,
+        "merge_heavy_images_coverage": 0.666667,
+        "merged_into_other_hit_count": 665,
+        "merged_into_other_coverage": 0.111783
+      },
+      "200": {
+        "candidate_count": 200,
+        "merge_heavy_images_hit": 31,
+        "merge_heavy_images_coverage": 0.861111,
+        "merged_into_other_hit_count": 1041,
+        "merged_into_other_coverage": 0.174987
+      }
+    },
+    "rules": [
+      "Candidate rows are filtered by suspicion_score >= merge_candidate_min_score.",
+      "merge_candidates.csv keeps the full filtered pool; merge_candidates_top.csv applies global top-k plus per-image caps.",
+      "Scores increase for larger predicted instances, denser images, crowded neighborhoods, multiple distance peaks, and multi-GT overlaps."
+    ],
+    "output_csv": null,
+    "output_top_csv": null,
+    "output_summary_json": null,
+    "output_patch_manifest": null,
+    "output_patch_dir": null,
+    "output_report_md": null,
+    "image_crop_count": 0
+  },
+  "failed_files": []
+}

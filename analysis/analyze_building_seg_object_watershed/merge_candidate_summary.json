@@ -1,0 +1,71 @@
+{
+  "enabled": true,
+  "candidate_count": 7064,
+  "total_candidates": 7064,
+  "selected_candidate_count": 200,
+  "exported_candidates": 200,
+  "min_score": 5,
+  "topk": 200,
+  "max_per_image": 10,
+  "patch_margin": 48,
+  "score_quantiles": {
+    "count": 7064,
+    "mean": 6.117922,
+    "median": 5.0,
+    "min": 5.0,
+    "max": 12.0,
+    "p10": 5.0,
+    "p90": 9.0,
+    "negative_count": 0,
+    "zero_count": 0,
+    "positive_count": 7064
+  },
+  "count_by_density_bucket": {
+    "dense": 6948,
+    "medium": 115,
+    "sparse": 1
+  },
+  "count_by_local_density_bucket": {
+    "dense": 5777,
+    "medium": 837,
+    "sparse": 450
+  },
+  "count_by_score_bucket": {
+    "5": 3988,
+    "6": 1109,
+    "7": 382,
+    "8": 700,
+    "9": 512,
+    "10": 363,
+    "11": 9,
+    "12": 1
+  },
+  "coverage_topn": {
+    "100": {
+      "candidate_count": 100,
+      "merge_heavy_images_hit": 22,
+      "merge_heavy_images_coverage": 0.647059,
+      "merged_into_other_hit_count": 681,
+      "merged_into_other_coverage": 0.12748
+    },
+    "200": {
+      "candidate_count": 200,
+      "merge_heavy_images_hit": 25,
+      "merge_heavy_images_coverage": 0.735294,
+      "merged_into_other_hit_count": 1071,
+      "merged_into_other_coverage": 0.200487
+    }
+  },
+  "rules": [
+    "Candidate rows are filtered by suspicion_score >= merge_candidate_min_score.",
+    "merge_candidates.csv keeps the full filtered pool; merge_candidates_top.csv applies global top-k plus per-image caps.",
+    "Scores increase for larger predicted instances, denser images, crowded neighborhoods, multiple distance peaks, and multi-GT overlaps."
+  ],
+  "output_csv": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidates.csv",
+  "output_top_csv": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidates_top.csv",
+  "output_summary_json": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidate_summary.json",
+  "output_patch_manifest": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/patch_manifest.csv",
+  "output_patch_dir": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidate_patches",
+  "output_report_md": "/home/lky/code/new/xbd_building_eval/outputs/analyze_building_seg_object_watershed/merge_candidate_report.md",
+  "image_crop_count": 200
+}
