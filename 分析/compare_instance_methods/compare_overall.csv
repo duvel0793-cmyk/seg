@@ -1,3 +1,0 @@
-method_name,method,pred_method,gt_method,bucket_reference_gt_method,object_precision,object_recall,object_f1,mean_matched_iou,pred_instance_count,gt_instance_count,count_error,merge_count,split_count,evaluated_images,gt_fixed
-cc,cc,cc,cc,cc,0.708344,0.671822,0.6896,0.782377,33975,35822,-1847,2649,1657,933,True
-watershed,watershed,watershed,cc,cc,0.70431,0.685612,0.694835,0.78297,34871,35822,-951,2416,1910,933,True
