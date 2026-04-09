@@ -1,0 +1,1714 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "tau_phase": "warmup_fixed_tau",
+      "tau_override_value": 0.22,
+      "train_tau_mean": 0.2199706882238388,
+      "train_tau_std": 1.4901161193847656e-08,
+      "train_tau_min": 0.219970703125,
+      "train_tau_max": 0.219970703125,
+      "train_tau_p10": 0.219970703125,
+      "train_tau_p50": 0.219970703125,
+      "train_tau_p90": 0.219970703125,
+      "val_tau_mean": 0.2199706882238388,
+      "val_tau_std": 1.4901161193847656e-08,
+      "val_tau_min": 0.219970703125,
+      "val_tau_max": 0.219970703125,
+      "val_tau_p10": 0.219970703125,
+      "val_tau_p50": 0.219970703125,
+      "val_tau_p90": 0.219970703125,
+      "train_difficulty_mean": 0.39420753717422485,
+      "train_difficulty_std": 0.26148322224617004,
+      "val_difficulty_mean": 0.35859552025794983,
+      "val_difficulty_std": 0.2524523138999939,
+      "train_tau_at_min_ratio": 0.0,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -0.828065812587738,
+      "train_raw_tau_std": 0.007127293385565281,
+      "train_raw_tau_min": -0.86181640625,
+      "train_raw_tau_max": -0.79541015625,
+      "train_raw_tau_p10": -0.83740234375,
+      "train_raw_tau_p50": -0.828125,
+      "train_raw_tau_p90": -0.81884765625,
+      "train_tau_minus_tau_ref_mean": -0.003149518510326743,
+      "train_tau_minus_tau_ref_std": 0.041845183819532394,
+      "train_tau_minus_tau_ref_min": -0.099853515625,
+      "train_tau_minus_tau_ref_max": 0.059326171875,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 0.0034694671630859375,
+          "difficulty_max": 0.1639404296875,
+          "difficulty_mean": 0.10739360004663467,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.1639404296875,
+          "difficulty_max": 0.3310546875,
+          "difficulty_mean": 0.23808538913726807,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.3310546875,
+          "difficulty_max": 0.603515625,
+          "difficulty_mean": 0.46079692244529724,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.603515625,
+          "difficulty_max": 0.9990234375,
+          "difficulty_mean": 0.7705447673797607,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.2199706882238388,
+          "std": 1.4901161193847656e-08,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.219970703125,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.219970703125,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.219970703125,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 0.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -0.8301960229873657,
+      "val_raw_tau_std": 0.006460638716816902,
+      "val_raw_tau_min": -0.85888671875,
+      "val_raw_tau_max": -0.80078125,
+      "val_raw_tau_p10": -0.83837890625,
+      "val_raw_tau_p50": -0.830078125,
+      "val_raw_tau_p90": -0.82177734375,
+      "val_tau_minus_tau_ref_mean": 0.0025489595718681812,
+      "val_tau_minus_tau_ref_std": 0.04039950668811798,
+      "val_tau_minus_tau_ref_min": -0.10009765625,
+      "val_tau_minus_tau_ref_max": 0.0560302734375,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.0242767333984375,
+          "difficulty_max": 0.1610107421875,
+          "difficulty_mean": 0.12733954191207886,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.1610107421875,
+          "difficulty_max": 0.25537109375,
+          "difficulty_mean": 0.19893726706504822,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.25537109375,
+          "difficulty_max": 0.50927734375,
+          "difficulty_mean": 0.36298301815986633,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.50927734375,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.745105504989624,
+          "tau_mean": 0.219970703125,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.219970703125,
+          "std": 0.0,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.219970703125,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.219970703125,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.219970703125,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": 2.921517250342731e-08,
+      "val_corr_tau_difficulty": 1.7060767731891247e-07
+    },
+    {
+      "epoch": 2,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.12054088711738586,
+      "train_tau_std": 0.005936611909419298,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.2213134765625,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.12005615234375,
+      "val_tau_mean": 0.11999530345201492,
+      "val_tau_std": 5.110543042974314e-06,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1207275390625,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.30854663252830505,
+      "train_difficulty_std": 0.28849169611930847,
+      "val_difficulty_mean": 0.24583293497562408,
+      "val_difficulty_std": 0.2781066596508026,
+      "train_tau_at_min_ratio": 0.8793314099311829,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -12.762003898620605,
+      "train_raw_tau_std": 2.8583996295928955,
+      "train_raw_tau_min": -21.609375,
+      "train_raw_tau_max": -0.81494140625,
+      "train_raw_tau_p10": -16.046875,
+      "train_raw_tau_p50": -13.109375,
+      "train_raw_tau_p90": -9.0390625,
+      "train_tau_minus_tau_ref_mean": -0.08887101709842682,
+      "train_tau_minus_tau_ref_std": 0.04646507278084755,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": 0.0538330078125,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 0.0006151199340820312,
+          "difficulty_max": 0.056304931640625,
+          "difficulty_mean": 0.02797478623688221,
+          "tau_mean": 0.12012289464473724,
+          "tau_std": 0.002359285019338131
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.056304931640625,
+          "difficulty_max": 0.200927734375,
+          "difficulty_mean": 0.11525960266590118,
+          "tau_mean": 0.12078062444925308,
+          "tau_std": 0.007371027022600174
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.200927734375,
+          "difficulty_max": 0.525390625,
+          "difficulty_mean": 0.35018131136894226,
+          "tau_mean": 0.12068386375904083,
+          "tau_std": 0.0067665474489331245
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.525390625,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.7407599687576294,
+          "tau_mean": 0.12057619541883469,
+          "tau_std": 0.005919048562645912
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.12051642686128616,
+          "std": 0.00584987411275506,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.12055952847003937,
+          "std": 0.005741721484810114,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.12061036378145218,
+          "std": 0.006210608407855034,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.120662622153759,
+          "std": 0.006580873858183622,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 0.9978272914886475,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -14.747395515441895,
+      "val_raw_tau_std": 1.6351945400238037,
+      "val_raw_tau_min": -20.671875,
+      "val_raw_tau_max": -6.0859375,
+      "val_raw_tau_p10": -16.734375,
+      "val_raw_tau_p50": -14.859375,
+      "val_raw_tau_p90": -12.5859375,
+      "val_tau_minus_tau_ref_mean": -0.07938062399625778,
+      "val_tau_minus_tau_ref_std": 0.04450598359107971,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.040283203125,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.0015306472778320312,
+          "difficulty_max": 0.038238525390625,
+          "difficulty_mean": 0.023665912449359894,
+          "tau_mean": 0.1199951320886612,
+          "tau_std": 9.110410132961988e-07
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.038238525390625,
+          "difficulty_max": 0.09796142578125,
+          "difficulty_mean": 0.06091148406267166,
+          "tau_mean": 0.11999563127756119,
+          "tau_std": 9.12677660380723e-06
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.09796142578125,
+          "difficulty_max": 0.395751953125,
+          "difficulty_mean": 0.2201852798461914,
+          "tau_mean": 0.11999525874853134,
+          "tau_std": 3.96908671973506e-06
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.395751953125,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6785505414009094,
+          "tau_mean": 0.11999516189098358,
+          "tau_std": 2.103624865412712e-06
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.11999532580375671,
+          "std": 5.654135748045519e-06,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.11999521404504776,
+          "std": 2.407613465038594e-06,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.11999528110027313,
+          "std": 3.970286343246698e-06,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": 0.013991598039865494,
+      "val_corr_tau_difficulty": -0.014437464997172356
+    },
+    {
+      "epoch": 3,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 1.012752022688801e-06,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.1202392578125,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.2933887541294098,
+      "train_difficulty_std": 0.2885739207267761,
+      "val_difficulty_mean": 0.22464285790920258,
+      "val_difficulty_std": 0.27195581793785095,
+      "train_tau_at_min_ratio": 0.9998372793197632,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -17.5274600982666,
+      "train_raw_tau_std": 2.381657838821411,
+      "train_raw_tau_min": -28.171875,
+      "train_raw_tau_max": -7.2421875,
+      "train_raw_tau_p10": -20.640625,
+      "train_raw_tau_p50": -17.46875,
+      "train_raw_tau_p90": -14.5078125,
+      "train_tau_minus_tau_ref_mean": -0.08699126541614532,
+      "train_tau_minus_tau_ref_std": 0.04618086293339729,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 0.00012433528900146484,
+          "difficulty_max": 0.043426513671875,
+          "difficulty_mean": 0.019876347854733467,
+          "tau_mean": 0.1199951320886612,
+          "tau_std": 6.10781341947586e-07
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.043426513671875,
+          "difficulty_max": 0.1798095703125,
+          "difficulty_mean": 0.09771393239498138,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 4.318645210332761e-07
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.1798095703125,
+          "difficulty_max": 0.5029296875,
+          "difficulty_mean": 0.32782357931137085,
+          "tau_mean": 0.1199951320886612,
+          "tau_std": 1.1009161653419142e-06
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.5029296875,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.7281302213668823,
+          "tau_mean": 0.1199951320886612,
+          "tau_std": 1.526731466583442e-06
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951320886612,
+          "std": 7.124624517018674e-07,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951320886612,
+          "std": 1.1149153351652785e-06,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.11999513953924179,
+          "std": 2.175901499867905e-06,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.11999514698982239,
+          "std": 1.1864768794112024e-06,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -18.945646286010742,
+      "val_raw_tau_std": 1.9576724767684937,
+      "val_raw_tau_min": -26.734375,
+      "val_raw_tau_max": -9.875,
+      "val_raw_tau_p10": -21.421875,
+      "val_raw_tau_p50": -18.96875,
+      "val_raw_tau_p90": -16.453125,
+      "val_tau_minus_tau_ref_mean": -0.07598962634801865,
+      "val_tau_minus_tau_ref_std": 0.04352150112390518,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0401611328125,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.0008802413940429688,
+          "difficulty_max": 0.029693603515625,
+          "difficulty_mean": 0.014444254338741302,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.029693603515625,
+          "difficulty_max": 0.0894775390625,
+          "difficulty_mean": 0.054827164858579636,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.0894775390625,
+          "difficulty_max": 0.339599609375,
+          "difficulty_mean": 0.18527154624462128,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.339599609375,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6440100073814392,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": 0.005620627664029598,
+      "val_corr_tau_difficulty": -8.335391754599186e-08
+    },
+    {
+      "epoch": 4,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 1.528497506342319e-07,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.12005615234375,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.2743178606033325,
+      "train_difficulty_std": 0.28635483980178833,
+      "val_difficulty_mean": 0.2609217166900635,
+      "val_difficulty_std": 0.2943546772003174,
+      "train_tau_at_min_ratio": 0.9999937415122986,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -21.41854476928711,
+      "train_raw_tau_std": 2.854905366897583,
+      "train_raw_tau_min": -33.09375,
+      "train_raw_tau_max": -8.78125,
+      "train_raw_tau_p10": -25.03125,
+      "train_raw_tau_p50": -21.453125,
+      "train_raw_tau_p90": -17.703125,
+      "train_tau_minus_tau_ref_mean": -0.0839390903711319,
+      "train_tau_minus_tau_ref_std": 0.04582589864730835,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 0.0001811981201171875,
+          "difficulty_max": 0.034423828125,
+          "difficulty_mean": 0.01588486321270466,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.034423828125,
+          "difficulty_max": 0.1478271484375,
+          "difficulty_mean": 0.07840515673160553,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.1478271484375,
+          "difficulty_max": 0.471923828125,
+          "difficulty_mean": 0.29244717955589294,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 3.0537432849087054e-07
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.471923828125,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.7105233073234558,
+          "tau_mean": 0.1199951097369194,
+          "tau_std": 7.450580596923828e-09
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 1.7824874021243886e-07,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -22.41765594482422,
+      "val_raw_tau_std": 2.338305711746216,
+      "val_raw_tau_min": -31.625,
+      "val_raw_tau_max": -11.2734375,
+      "val_raw_tau_p10": -25.28125,
+      "val_raw_tau_p50": -22.5625,
+      "val_raw_tau_p90": -19.28125,
+      "val_tau_minus_tau_ref_mean": -0.08179505914449692,
+      "val_tau_minus_tau_ref_std": 0.04710595682263374,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0401611328125,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.00048542022705078125,
+          "difficulty_max": 0.0261993408203125,
+          "difficulty_mean": 0.015122922137379646,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.0261993408203125,
+          "difficulty_max": 0.1114501953125,
+          "difficulty_mean": 0.05639692768454552,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.11151123046875,
+          "difficulty_max": 0.449462890625,
+          "difficulty_mean": 0.2565382719039917,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.449462890625,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.7156100869178772,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": 0.000591004325542599,
+      "val_corr_tau_difficulty": 1.5402221720250964e-08
+    },
+    {
+      "epoch": 5,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 7.450580596923828e-09,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.1199951171875,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.2608555853366852,
+      "train_difficulty_std": 0.2834600806236267,
+      "val_difficulty_mean": 0.23071089386940002,
+      "val_difficulty_std": 0.2765659987926483,
+      "train_tau_at_min_ratio": 1.0,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -24.10637855529785,
+      "train_raw_tau_std": 2.9548287391662598,
+      "train_raw_tau_min": -37.40625,
+      "train_raw_tau_max": -11.59375,
+      "train_raw_tau_p10": -27.84375,
+      "train_raw_tau_p50": -24.140625,
+      "train_raw_tau_p90": -20.28125,
+      "train_tau_minus_tau_ref_mean": -0.08178460597991943,
+      "train_tau_minus_tau_ref_std": 0.0453624501824379,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 9.21487808227539e-05,
+          "difficulty_max": 0.0304107666015625,
+          "difficulty_mean": 0.014479395933449268,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.0304107666015625,
+          "difficulty_max": 0.128173828125,
+          "difficulty_mean": 0.06774856895208359,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.128173828125,
+          "difficulty_max": 0.445556640625,
+          "difficulty_mean": 0.26497307419776917,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.445556640625,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6962103247642517,
+          "tau_mean": 0.1199951097369194,
+          "tau_std": 7.450580596923828e-09
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -24.089550018310547,
+      "val_raw_tau_std": 2.129585027694702,
+      "val_raw_tau_min": -34.21875,
+      "val_raw_tau_max": -14.8515625,
+      "val_raw_tau_p10": -26.78125,
+      "val_raw_tau_p50": -24.09375,
+      "val_raw_tau_p90": -21.34375,
+      "val_tau_minus_tau_ref_mean": -0.07696069777011871,
+      "val_tau_minus_tau_ref_std": 0.04425925388932228,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0401611328125,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.0007548332214355469,
+          "difficulty_max": 0.02459716796875,
+          "difficulty_mean": 0.013139045797288418,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.02459716796875,
+          "difficulty_max": 0.08148193359375,
+          "difficulty_mean": 0.0459890179336071,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.08148193359375,
+          "difficulty_max": 0.375244140625,
+          "difficulty_mean": 0.20400308072566986,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.375244140625,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.659694254398346,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": -1.0106286918443175e-09,
+      "val_corr_tau_difficulty": 1.6392890600513965e-08
+    },
+    {
+      "epoch": 6,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 7.450580596923828e-09,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.1199951171875,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.2506021559238434,
+      "train_difficulty_std": 0.2816929221153259,
+      "val_difficulty_mean": 0.22638386487960815,
+      "val_difficulty_std": 0.2825975716114044,
+      "train_tau_at_min_ratio": 1.0,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -26.105655670166016,
+      "train_raw_tau_std": 3.11099910736084,
+      "train_raw_tau_min": -41.625,
+      "train_raw_tau_max": -13.4609375,
+      "train_raw_tau_p10": -30.0625,
+      "train_raw_tau_p50": -26.109375,
+      "train_raw_tau_p90": -22.125,
+      "train_tau_minus_tau_ref_mean": -0.08014363795518875,
+      "train_tau_minus_tau_ref_std": 0.04507945477962494,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 6.282329559326172e-05,
+          "difficulty_max": 0.0267181396484375,
+          "difficulty_mean": 0.012708415277302265,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.0267181396484375,
+          "difficulty_max": 0.112548828125,
+          "difficulty_mean": 0.059271033853292465,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.112548828125,
+          "difficulty_max": 0.427001953125,
+          "difficulty_mean": 0.2450510412454605,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.427001953125,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6853674054145813,
+          "tau_mean": 0.1199951097369194,
+          "tau_std": 7.450580596923828e-09
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -26.8508358001709,
+      "val_raw_tau_std": 2.506420135498047,
+      "val_raw_tau_min": -37.40625,
+      "val_raw_tau_max": -17.109375,
+      "val_raw_tau_p10": -30.0,
+      "val_raw_tau_p50": -26.953125,
+      "val_raw_tau_p90": -23.546875,
+      "val_tau_minus_tau_ref_mean": -0.07626836001873016,
+      "val_tau_minus_tau_ref_std": 0.045224834233522415,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0400390625,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.00030517578125,
+          "difficulty_max": 0.020904541015625,
+          "difficulty_mean": 0.010572487488389015,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.020904541015625,
+          "difficulty_max": 0.07916259765625,
+          "difficulty_mean": 0.04266439378261566,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.07916259765625,
+          "difficulty_max": 0.3525390625,
+          "difficulty_mean": 0.18637406826019287,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.3525390625,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6659055948257446,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": -1.270363441108202e-07,
+      "val_corr_tau_difficulty": 3.208602450399667e-08
+    },
+    {
+      "epoch": 7,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 7.450580596923828e-09,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.1199951171875,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.2436530441045761,
+      "train_difficulty_std": 0.2795966565608978,
+      "val_difficulty_mean": 0.2015244960784912,
+      "val_difficulty_std": 0.27968430519104004,
+      "train_tau_at_min_ratio": 1.0,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -27.891773223876953,
+      "train_raw_tau_std": 3.347172498703003,
+      "train_raw_tau_min": -44.46875,
+      "train_raw_tau_max": -14.140625,
+      "train_raw_tau_p10": -32.15625,
+      "train_raw_tau_p50": -27.859375,
+      "train_raw_tau_p90": -23.625,
+      "train_tau_minus_tau_ref_mean": -0.07903176546096802,
+      "train_tau_minus_tau_ref_std": 0.04474446550011635,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 8.165836334228516e-05,
+          "difficulty_max": 0.025238037109375,
+          "difficulty_mean": 0.012251392938196659,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.0252532958984375,
+          "difficulty_max": 0.104736328125,
+          "difficulty_mean": 0.05490231141448021,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.104736328125,
+          "difficulty_max": 0.408203125,
+          "difficulty_mean": 0.23160937428474426,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.408203125,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.67583829164505,
+          "tau_mean": 0.1199951097369194,
+          "tau_std": 7.450580596923828e-09
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -27.5067195892334,
+      "val_raw_tau_std": 2.4903528690338135,
+      "val_raw_tau_min": -40.65625,
+      "val_raw_tau_max": -18.96875,
+      "val_raw_tau_p10": -30.75,
+      "val_raw_tau_p50": -27.4375,
+      "val_raw_tau_p90": -24.34375,
+      "val_tau_minus_tau_ref_mean": -0.07228982448577881,
+      "val_tau_minus_tau_ref_std": 0.04475807771086693,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0400390625,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.00027942657470703125,
+          "difficulty_max": 0.01239013671875,
+          "difficulty_mean": 0.00732409069314599,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.01239013671875,
+          "difficulty_max": 0.042633056640625,
+          "difficulty_mean": 0.022529924288392067,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.042633056640625,
+          "difficulty_max": 0.302734375,
+          "difficulty_mean": 0.13776886463165283,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.302734375,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6384559273719788,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": 2.8944766583549608e-08,
+      "val_corr_tau_difficulty": 3.242024249061615e-08
+    },
+    {
+      "epoch": 8,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 7.450580596923828e-09,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.1199951171875,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.23719832301139832,
+      "train_difficulty_std": 0.2774994969367981,
+      "val_difficulty_mean": 0.2178032100200653,
+      "val_difficulty_std": 0.280489057302475,
+      "train_tau_at_min_ratio": 1.0,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -28.224884033203125,
+      "train_raw_tau_std": 3.3340578079223633,
+      "train_raw_tau_min": -44.8125,
+      "train_raw_tau_max": -13.9453125,
+      "train_raw_tau_p10": -32.5,
+      "train_raw_tau_p50": -28.171875,
+      "train_raw_tau_p90": -24.0,
+      "train_tau_minus_tau_ref_mean": -0.07799884676933289,
+      "train_tau_minus_tau_ref_std": 0.04440869763493538,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 9.524822235107422e-05,
+          "difficulty_max": 0.0234832763671875,
+          "difficulty_mean": 0.01156522985547781,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.0234832763671875,
+          "difficulty_max": 0.097900390625,
+          "difficulty_mean": 0.05109552666544914,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.097900390625,
+          "difficulty_max": 0.39306640625,
+          "difficulty_mean": 0.21930736303329468,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.39306640625,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6668144464492798,
+          "tau_mean": 0.1199951097369194,
+          "tau_std": 7.450580596923828e-09
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -27.88324546813965,
+      "val_raw_tau_std": 2.5515875816345215,
+      "val_raw_tau_min": -42.3125,
+      "val_raw_tau_max": -18.390625,
+      "val_raw_tau_p10": -31.21875,
+      "val_raw_tau_p50": -27.75,
+      "val_raw_tau_p90": -24.703125,
+      "val_tau_minus_tau_ref_mean": -0.07489495724439621,
+      "val_tau_minus_tau_ref_std": 0.04488714039325714,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0401611328125,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.0003814697265625,
+          "difficulty_max": 0.0194244384765625,
+          "difficulty_mean": 0.012145530432462692,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.0194244384765625,
+          "difficulty_max": 0.06719970703125,
+          "difficulty_mean": 0.03579596057534218,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.06719970703125,
+          "difficulty_max": 0.32861328125,
+          "difficulty_mean": 0.1688617467880249,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.32861328125,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6543907523155212,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": 5.161683858112553e-10,
+      "val_corr_tau_difficulty": 0.0
+    },
+    {
+      "epoch": 9,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 7.450580596923828e-09,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.1199951171875,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.23064681887626648,
+      "train_difficulty_std": 0.27625927329063416,
+      "val_difficulty_mean": 0.1938382089138031,
+      "val_difficulty_std": 0.2837381958961487,
+      "train_tau_at_min_ratio": 1.0,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -28.590145111083984,
+      "train_raw_tau_std": 3.181445598602295,
+      "train_raw_tau_min": -45.59375,
+      "train_raw_tau_max": -15.0390625,
+      "train_raw_tau_p10": -32.625,
+      "train_raw_tau_p50": -28.546875,
+      "train_raw_tau_p90": -24.578125,
+      "train_tau_minus_tau_ref_mean": -0.07695029675960541,
+      "train_tau_minus_tau_ref_std": 0.04421059414744377,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 6.783008575439453e-05,
+          "difficulty_max": 0.0214691162109375,
+          "difficulty_mean": 0.010700981132686138,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.0214691162109375,
+          "difficulty_max": 0.0882568359375,
+          "difficulty_mean": 0.04600326344370842,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.0882568359375,
+          "difficulty_max": 0.38232421875,
+          "difficulty_mean": 0.20679551362991333,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.38232421875,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6590767502784729,
+          "tau_mean": 0.1199951097369194,
+          "tau_std": 7.450580596923828e-09
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -28.4075927734375,
+      "val_raw_tau_std": 2.3393380641937256,
+      "val_raw_tau_min": -41.75,
+      "val_raw_tau_max": -19.984375,
+      "val_raw_tau_p10": -31.46875,
+      "val_raw_tau_p50": -28.28125,
+      "val_raw_tau_p90": -25.5,
+      "val_tau_minus_tau_ref_mean": -0.07105950266122818,
+      "val_tau_minus_tau_ref_std": 0.04540671408176422,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0400390625,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.0001285076141357422,
+          "difficulty_max": 0.0093536376953125,
+          "difficulty_mean": 0.005639844108372927,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.0093536376953125,
+          "difficulty_max": 0.035247802734375,
+          "difficulty_mean": 0.01773858070373535,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.035247802734375,
+          "difficulty_max": 0.2744140625,
+          "difficulty_mean": 0.11572947353124619,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.2744140625,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6362252235412598,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": 6.066282054462135e-08,
+      "val_corr_tau_difficulty": -6.391407936234828e-08
+    },
+    {
+      "epoch": 10,
+      "tau_phase": "adaptive_tau",
+      "tau_override_value": null,
+      "train_tau_mean": 0.1199951246380806,
+      "train_tau_std": 7.450580596923828e-09,
+      "train_tau_min": 0.1199951171875,
+      "train_tau_max": 0.1199951171875,
+      "train_tau_p10": 0.1199951171875,
+      "train_tau_p50": 0.1199951171875,
+      "train_tau_p90": 0.1199951171875,
+      "val_tau_mean": 0.1199951246380806,
+      "val_tau_std": 7.450580596923828e-09,
+      "val_tau_min": 0.1199951171875,
+      "val_tau_max": 0.1199951171875,
+      "val_tau_p10": 0.1199951171875,
+      "val_tau_p50": 0.1199951171875,
+      "val_tau_p90": 0.1199951171875,
+      "train_difficulty_mean": 0.22445066273212433,
+      "train_difficulty_std": 0.2738998830318451,
+      "val_difficulty_mean": 0.22725550830364227,
+      "val_difficulty_std": 0.2861294448375702,
+      "train_tau_at_min_ratio": 1.0,
+      "train_tau_at_max_ratio": 0.0,
+      "train_raw_tau_mean": -28.674484252929688,
+      "train_raw_tau_std": 3.178154945373535,
+      "train_raw_tau_min": -46.25,
+      "train_raw_tau_max": -16.125,
+      "train_raw_tau_p10": -32.75,
+      "train_raw_tau_p50": -28.578125,
+      "train_raw_tau_p90": -24.703125,
+      "train_tau_minus_tau_ref_mean": -0.07595863193273544,
+      "train_tau_minus_tau_ref_std": 0.04383256286382675,
+      "train_tau_minus_tau_ref_min": -0.2000732421875,
+      "train_tau_minus_tau_ref_max": -0.0400390625,
+      "train_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 39948,
+          "difficulty_min": 9.167194366455078e-05,
+          "difficulty_max": 0.0207977294921875,
+          "difficulty_mean": 0.010536731220781803,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 39948,
+          "difficulty_min": 0.0207977294921875,
+          "difficulty_max": 0.08148193359375,
+          "difficulty_mean": 0.04349493607878685,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 39948,
+          "difficulty_min": 0.08148193359375,
+          "difficulty_max": 0.366455078125,
+          "difficulty_mean": 0.1942056268453598,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 39949,
+          "difficulty_min": 0.366455078125,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6495546698570251,
+          "tau_mean": 0.1199951097369194,
+          "tau_std": 7.450580596923828e-09
+        }
+      ],
+      "train_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 117425
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14980
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 14161
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 13227
+        }
+      },
+      "val_tau_at_min_ratio": 1.0,
+      "val_tau_at_max_ratio": 0.0,
+      "val_raw_tau_mean": -28.138723373413086,
+      "val_raw_tau_std": 2.312486410140991,
+      "val_raw_tau_min": -40.1875,
+      "val_raw_tau_max": -20.40625,
+      "val_raw_tau_p10": -31.1875,
+      "val_raw_tau_p50": -28.015625,
+      "val_raw_tau_p90": -25.25,
+      "val_tau_minus_tau_ref_mean": -0.07640755921602249,
+      "val_tau_minus_tau_ref_std": 0.04578990116715431,
+      "val_tau_minus_tau_ref_min": -0.2000732421875,
+      "val_tau_minus_tau_ref_max": -0.0401611328125,
+      "val_tau_by_difficulty_bin": [
+        {
+          "bin_index": 0,
+          "count": 13462,
+          "difficulty_min": 0.0005598068237304688,
+          "difficulty_max": 0.01800537109375,
+          "difficulty_mean": 0.011139815673232079,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 1,
+          "count": 13463,
+          "difficulty_min": 0.01800537109375,
+          "difficulty_max": 0.06829833984375,
+          "difficulty_mean": 0.035043563693761826,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 2,
+          "count": 13462,
+          "difficulty_min": 0.06829833984375,
+          "difficulty_max": 0.372802734375,
+          "difficulty_mean": 0.1882593035697937,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        },
+        {
+          "bin_index": 3,
+          "count": 13463,
+          "difficulty_min": 0.372802734375,
+          "difficulty_max": 1.0,
+          "difficulty_mean": 0.6745604276657104,
+          "tau_mean": 0.1199951171875,
+          "tau_std": 0.0
+        }
+      ],
+      "val_tau_by_class": {
+        "no-damage": {
+          "mean": 0.1199951246380806,
+          "std": 7.450580596923828e-09,
+          "count": 41427
+        },
+        "minor-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 4798
+        },
+        "major-damage": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3850
+        },
+        "destroyed": {
+          "mean": 0.1199951171875,
+          "std": 0.0,
+          "count": 3775
+        }
+      },
+      "train_corr_tau_difficulty": -2.9633939746531723e-09,
+      "val_corr_tau_difficulty": 0.0
+    }
+  ]
+}

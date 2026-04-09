@@ -1,0 +1,94 @@
+project_name: oracle-instance-damage-classification
+seed: 42
+data:
+  root_dir: /home/ubuntu/code/lky/data/xBD
+  train_list: /home/ubuntu/code/lky/data/xBD/xBD_list/train_all.txt
+  val_list: /home/ubuntu/code/lky/data/xBD/xBD_list/val_all.txt
+  instance_source: gt_json
+  allow_tier3: false
+  image_size: 224
+  context_ratio: 0.25
+  min_polygon_area: 16.0
+  min_mask_pixels: 16
+  max_out_of_bound_ratio: 0.4
+  cache_dir: ./cache
+augmentation:
+  hflip_prob: 0.5
+  vflip_prob: 0.5
+  rotate90_prob: 0.5
+  random_resized_crop_prob: 0.5
+  random_resized_crop_scale:
+  - 0.9
+  - 1.0
+  random_resized_crop_ratio:
+  - 0.95
+  - 1.05
+  min_mask_retention: 0.75
+  color_jitter_prob: 0.6
+  brightness: 0.15
+  contrast: 0.15
+  saturation: 0.1
+  hue: 0.02
+  normalize_mean:
+  - 0.485
+  - 0.456
+  - 0.406
+  normalize_std:
+  - 0.229
+  - 0.224
+  - 0.225
+model:
+  model_type: oracle_mcd
+  head_type: standard
+  backbone: resnet18
+  pretrained: true
+  dropout: 0.2
+  channel_attention_reduction: 16
+  ambiguity_hidden_features: 256
+training:
+  batch_size: 32
+  epochs: 50
+  lr: 0.0003
+  weight_decay: 0.0001
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 3
+  num_workers: 8
+  amp: true
+  loss_mode: adaptive_ucl_cda_v3
+  lambda_ord: 0.2
+  lambda_uni: 0.1
+  lambda_conc: 0.01
+  lambda_gap_reg: 0.001
+  lambda_tau: 0.01
+  lambda_tau_mean: 0.05
+  lambda_tau_diff: 0.2
+  lambda_tau_rank: 0.05
+  fixed_cda_alpha: 0.3
+  tau_init: 0.22
+  tau_min: 0.12
+  tau_max: 0.45
+  tau_base: 0.22
+  delta_scale: 0.1
+  tau_parameterization: sigmoid
+  tau_target: 0.22
+  tau_easy: 0.16
+  tau_hard: 0.32
+  tau_variance_weight: 0.01
+  tau_std_floor: 0.03
+  tau_rank_margin_difficulty: 0.1
+  tau_rank_margin_value: 0.01
+  tau_freeze_epochs: 1
+  tau_warmup_value: 0.22
+  ambiguity_lr_scale: 0.5
+  concentration_margin: 0.05
+  lambda_aux: 0.2
+  label_smoothing: 0.0
+  use_focal: false
+  focal_gamma: 2.0
+evaluation:
+  split_name: val
+  num_visuals_per_class: 8
+output:
+  output_root: ./outputs
+  exp_name: vscode_run

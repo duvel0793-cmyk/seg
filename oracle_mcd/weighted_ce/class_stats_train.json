@@ -1,0 +1,20 @@
+{
+  "class_names": [
+    "no-damage",
+    "minor-damage",
+    "major-damage",
+    "destroyed"
+  ],
+  "class_counts": {
+    "no-damage": 117425,
+    "minor-damage": 14980,
+    "major-damage": 14161,
+    "destroyed": 13227
+  },
+  "class_weights": {
+    "no-damage": 0.1537952721118927,
+    "minor-damage": 1.2055681943893433,
+    "major-damage": 1.2752920389175415,
+    "destroyed": 1.3653444051742554
+  }
+}
