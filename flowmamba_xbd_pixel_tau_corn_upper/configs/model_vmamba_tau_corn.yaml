@@ -3,6 +3,7 @@ model:
   backend: vmamba
   use_fallback_backbone: false
   fail_if_vmamba_unavailable: true
+
   pretrained_path: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/pretrained/vssm_small_0229_ckpt_epoch_222.pth
   pretrained_key: model
   pretrained_strict: false
@@ -12,8 +13,12 @@ model:
   decoder_channels: 128
   head_channels: 128
 
+  # -------------------------
+  # lightweight safe tau
+  # -------------------------
   enable_tau: true
   tau_mode: pixel_corn_safe_v2
+
   tau_init: 0.03
   tau_min: -0.02
   tau_max: 0.18
@@ -23,30 +28,36 @@ model:
   tau_std_floor: 0.03
   tau_warmup_epochs: 2
 
+  # 小 hidden + 共享 tau
   tau_per_boundary: false
   tau_hidden_channels: 16
+
   tau_detach_features: true
   tau_detach_logits: true
 
+  # 只保留轻量防崩项
   lambda_tau_reg: 0.001
   lambda_tau_mean: 0.0
-  lambda_tau_diff: 0.0
+  lambda_tau_diff: 0.001
   lambda_tau_rank: 0.0
-  lambda_raw_tau_center: 0.0
+  lambda_raw_tau_center: 0.0005
   lambda_raw_tau_bound: 0.0
+
   raw_tau_bound: 4.0
   difficulty_bins: 5
 
+  # 关 soft teacher
   corn_soft_start_epoch: 999
   lambda_corn_soft: 0.0
   soft_target_detach: true
   soft_target_max_mix: 0.10
 
-  instance_pool_source: ordinal_logits
+  # instance aux 先保持现状；如果还嫌慢，可以再单独减
+  instance_pool_source: both
   instance_feature_channels: 128
   instance_head_channels: 128
-  lambda_instance: 0.0
-  instance_aux_warmup_epochs: 999
+  lambda_instance: 0.2
+  instance_aux_warmup_epochs: 1
   instance_aux_on_val: false
 
   backbone_kwargs:
