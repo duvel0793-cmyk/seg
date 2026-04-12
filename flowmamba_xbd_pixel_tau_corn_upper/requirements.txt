@@ -1,0 +1,12 @@
+torch
+torchvision
+PyYAML
+Pillow
+numpy
+shapely
+
+# Optional but recommended for real upstream FlowMamba / VMamba backbone loading:
+timm
+einops
+mmengine
+fvcore
