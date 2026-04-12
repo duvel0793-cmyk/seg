@@ -20,30 +20,33 @@ model:
   tau_target: 0.03
   tau_easy: 0.00
   tau_hard: 0.12
-  tau_std_floor: 0.05
-  tau_warmup_epochs: 1
-  tau_per_boundary: true
-  tau_hidden_channels: 64
+  tau_std_floor: 0.03
+  tau_warmup_epochs: 2
+
+  tau_per_boundary: false
+  tau_hidden_channels: 16
   tau_detach_features: true
   tau_detach_logits: true
+
   lambda_tau_reg: 0.001
-  lambda_tau_mean: 0.001
-  lambda_tau_diff: 0.005
-  lambda_tau_rank: 0.001
-  lambda_raw_tau_center: 0.001
-  lambda_raw_tau_bound: 0.0005
+  lambda_tau_mean: 0.0
+  lambda_tau_diff: 0.0
+  lambda_tau_rank: 0.0
+  lambda_raw_tau_center: 0.0
+  lambda_raw_tau_bound: 0.0
   raw_tau_bound: 4.0
   difficulty_bins: 5
-  corn_soft_start_epoch: 2
-  lambda_corn_soft: 0.05
-  soft_target_detach: true
-  soft_target_max_mix: 0.35
 
-  instance_pool_source: both
+  corn_soft_start_epoch: 999
+  lambda_corn_soft: 0.0
+  soft_target_detach: true
+  soft_target_max_mix: 0.10
+
+  instance_pool_source: ordinal_logits
   instance_feature_channels: 128
   instance_head_channels: 128
-  lambda_instance: 0.2
-  instance_aux_warmup_epochs: 1
+  lambda_instance: 0.0
+  instance_aux_warmup_epochs: 999
   instance_aux_on_val: false
 
   backbone_kwargs:
@@ -72,5 +75,6 @@ model:
     patchembed_version: v2
     gmlp: false
     use_checkpoint: false
+
   fallback:
     channels: [32, 64, 128, 256]
