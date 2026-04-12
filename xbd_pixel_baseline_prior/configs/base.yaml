@@ -1,0 +1,49 @@
+seed: 42
+device: cuda
+output_dir: /home/lky/code/xbd_pixel_baseline_prior/outputs/default
+
+data:
+  root_dir: /home/lky/data/xBD
+  train_list: /home/lky/data/xBD/xBD_list/train_all.txt
+  val_list: /home/lky/data/xBD/xBD_list/val_all.txt
+  train_image_dir: /home/lky/data/xBD/train/images
+  val_image_dir: /home/lky/data/xBD/test/images
+  target_dir: /home/lky/data/xBD
+  prior_dir: null
+  prior_mode: none
+  prior_filename_pattern: "{sample_id}.png"
+  crop_size: 256
+  num_workers: 4
+  pin_memory: true
+  strict_data_check: false
+  label_stats_files: 128
+
+model:
+  in_channels: 6
+  pretrained: true
+  decoder_channels: 128
+
+loss:
+  class_weights: [0.2, 1.0, 2.0, 2.5, 3.0]
+  focal_gamma: 2.0
+  lambda_loc: 0.3
+  prior_alpha: 1.0
+
+train:
+  batch_size: 4
+  epochs: 30
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+  amp: true
+  grad_clip: 1.0
+  val_interval: 1
+  save_best_metric: damage_macro_f1
+
+eval:
+  batch_size: 1
+  ignore_background_in_macro: true
+  save_pred_masks: false
+  save_overlay: false
+
+logging:
+  print_freq: 10

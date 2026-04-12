@@ -1,0 +1,10 @@
+base_config: base.yaml
+
+output_dir: /home/lky/code/xbd_pixel_baseline_prior/outputs/baseline_no_prior
+
+data:
+  prior_mode: none
+  prior_dir: null
+
+model:
+  in_channels: 6
