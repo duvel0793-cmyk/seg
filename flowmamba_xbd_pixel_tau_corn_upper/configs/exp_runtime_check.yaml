@@ -1,0 +1,31 @@
+defaults:
+  - exp_step1.yaml
+
+experiment:
+  name: exp_runtime_check
+
+output_dir: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/outputs/runtime_check
+amp: true
+num_workers: 0
+print_freq: 1
+
+train:
+  batch_size: 1
+  val_batch_size: 1
+  max_train_batches: 1
+  max_val_batches: 1
+  save_freq: 1
+
+model:
+  backend: vmamba
+  use_fallback_backbone: false
+  fail_if_vmamba_unavailable: true
+  instance_aux_warmup_epochs: 0
+  instance_aux_on_val: true
+
+smoke_test:
+  num_train_batches: 1
+  num_val_batches: 1
+
+validation:
+  max_debug_images: 1

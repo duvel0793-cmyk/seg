@@ -1,0 +1,13 @@
+defaults:
+  - exp_step1.yaml
+
+experiment:
+  name: exp_step1_fallback_smoke
+
+output_dir: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/outputs/exp_step1_fallback_smoke
+
+model:
+  backend: fallback
+  use_fallback_backbone: true
+  fail_if_vmamba_unavailable: false
+  pretrained_required: false

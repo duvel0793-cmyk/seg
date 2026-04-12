@@ -1,0 +1,72 @@
+defaults:
+  - base.yaml
+  - data_xbd.yaml
+  - model_vmamba_tau_corn.yaml
+
+experiment:
+  name: exp_fulltrain_vmamba
+
+output_dir: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/outputs/exp_fulltrain_vmamba
+amp: true
+num_workers: 2
+print_freq: 25
+strict_data_check: true
+
+train:
+  epochs: 40
+  batch_size: 1
+  val_batch_size: 1
+  lr: 0.00015
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  val_interval: 1
+  save_freq: 5
+  resume: ""
+  finetune_from: ""
+  strict_resume_metadata: true
+  strict_finetune_metadata: false
+  max_train_batches: null
+  max_val_batches: null
+
+optimizer:
+  name: adamw
+
+scheduler:
+  name: cosine
+  min_lr: 5.0e-7
+
+loss:
+  loc_ce_weight: 1.0
+  instance_min_pixels: 32
+
+data:
+  augment:
+    random_hflip: true
+    random_vflip: true
+    random_rotate_90: true
+    random_resized_crop: true
+    random_resized_crop_scale: [0.8, 1.0]
+    crop_retry: 10
+    min_building_pixels: 768
+    min_building_ratio: 0.015
+    color_jitter: true
+
+model:
+  backend: vmamba
+  use_fallback_backbone: false
+  fail_if_vmamba_unavailable: true
+  pretrained_required: true
+  pretrained_strict: false
+  lambda_instance: 0.3
+  instance_aux_warmup_epochs: 2
+  instance_aux_on_val: false
+  tau_warmup_epochs: 3
+  corn_soft_start_epoch: 6
+  lambda_corn_soft: 0.075
+
+validation:
+  mode: tiled
+  tile_size: [512, 512]
+  tile_stride: [384, 384]
+  merge_window: hann
+  max_debug_images: 12

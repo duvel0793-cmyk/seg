@@ -1,0 +1,8 @@
+seed: 42
+device: auto
+num_workers: 2
+output_dir: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/outputs
+amp: false
+print_freq: 10
+save_freq: 1
+strict_data_check: false
