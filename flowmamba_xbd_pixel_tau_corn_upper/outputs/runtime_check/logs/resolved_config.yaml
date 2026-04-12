@@ -1,0 +1,145 @@
+seed: 42
+device: auto
+num_workers: 0
+output_dir: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/outputs/runtime_check
+amp: true
+print_freq: 1
+save_freq: 1
+strict_data_check: false
+data:
+  data_root: /home/lky/data/xBD
+  train_split: train
+  val_split: test
+  train_list: /home/lky/data/xBD/xBD_list/train_all.txt
+  val_list: /home/lky/data/xBD/xBD_list/val_all.txt
+  image_size:
+  - 512
+  - 512
+  crop_size:
+  - 512
+  - 512
+  ignore_index: 255
+  num_classes_loc: 2
+  num_classes_damage: 4
+  mean:
+  - 0.485
+  - 0.456
+  - 0.406
+  std:
+  - 0.229
+  - 0.224
+  - 0.225
+  min_polygon_area: 4.0
+  augment:
+    random_hflip: true
+    random_vflip: false
+    color_jitter: true
+model:
+  backbone_name: flowmamba_vssm_small
+  backend: vmamba
+  fail_if_fallback: true
+  pretrained_path: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/pretrained/vssm_small_0229_ckpt_epoch_222.pth
+  pretrained_key: model
+  pretrained_strict: false
+  pretrained_required: false
+  flowmamba_repo: /home/lky/code/FlowMamba/FlowMamba
+  vmamba_repo: /home/lky/code/VMamba
+  use_flowmamba_style_backbone: true
+  decoder_channels: 128
+  head_channels: 128
+  enable_tau: true
+  tau_mode: pixel_corn_safe_v2
+  tau_init: 0.03
+  tau_min: -0.02
+  tau_max: 0.18
+  tau_target: 0.03
+  tau_easy: 0.0
+  tau_hard: 0.12
+  tau_std_floor: 0.05
+  tau_warmup_epochs: 1
+  tau_per_boundary: true
+  tau_hidden_channels: 64
+  tau_detach_features: true
+  tau_detach_logits: true
+  lambda_tau_reg: 0.001
+  lambda_tau_mean: 0.001
+  lambda_tau_diff: 0.005
+  lambda_tau_rank: 0.001
+  lambda_raw_tau_center: 0.001
+  lambda_raw_tau_bound: 0.0005
+  raw_tau_bound: 4.0
+  difficulty_bins: 5
+  corn_soft_start_epoch: 2
+  lambda_corn_soft: 0.05
+  soft_target_detach: true
+  soft_target_max_mix: 0.35
+  instance_pool_source: both
+  instance_feature_channels: 128
+  instance_head_channels: 128
+  lambda_instance: 0.2
+  instance_aux_warmup_epochs: 0
+  instance_aux_on_val: true
+  backbone_kwargs:
+    patch_size: 4
+    in_chans: 3
+    num_classes: 1000
+    depths:
+    - 2
+    - 2
+    - 15
+    - 2
+    dims: 96
+    ssm_d_state: 1
+    ssm_ratio: 2.0
+    ssm_rank_ratio: 2.0
+    ssm_dt_rank: auto
+    ssm_act_layer: silu
+    ssm_conv: 3
+    ssm_conv_bias: false
+    ssm_drop_rate: 0.0
+    ssm_init: v0
+    forward_type: v05_noz
+    mlp_ratio: 4.0
+    mlp_act_layer: gelu
+    mlp_drop_rate: 0.0
+    drop_path_rate: 0.3
+    patch_norm: true
+    norm_layer: ln2d
+    downsample_version: v3
+    patchembed_version: v2
+    gmlp: false
+    use_checkpoint: false
+  fallback:
+    channels:
+    - 32
+    - 64
+    - 128
+    - 256
+experiment:
+  name: exp_runtime_check
+train:
+  epochs: 1
+  batch_size: 1
+  val_batch_size: 1
+  lr: 0.0002
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  val_interval: 1
+  resume: ''
+  max_train_batches: 1
+  max_val_batches: 1
+  save_freq: 1
+optimizer:
+  name: adamw
+scheduler:
+  name: cosine
+  min_lr: 1.0e-06
+loss:
+  loc_ce_weight: 1.0
+  instance_min_pixels: 16
+smoke_test:
+  num_train_batches: 1
+  num_val_batches: 1
+validation:
+  max_debug_images: 1
+config_path: /home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/configs/exp_runtime_check.yaml

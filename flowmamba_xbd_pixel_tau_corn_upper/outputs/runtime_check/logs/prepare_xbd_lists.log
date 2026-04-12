@@ -1,0 +1,16 @@
+2026-04-12 21:00:33 | INFO | Checking local xBD paths
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD | data_root
+2026-04-12 21:00:33 | INFO | Detected xBD layout: split-style
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/train/images | train images
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/train/targets | train targets
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/train/labels | train labels
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/test/images | test images
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/test/targets | test targets
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/test/labels | test labels
+2026-04-12 21:00:33 | INFO | [INFO] /home/lky/data/xBD/images | flat images; not required for current split-style layout
+2026-04-12 21:00:33 | INFO | [INFO] /home/lky/data/xBD/targets | flat targets; not required for current split-style layout
+2026-04-12 21:00:33 | INFO | [INFO] /home/lky/data/xBD/labels | flat labels; not required for current split-style layout
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/xBD_list/train_all.txt | train list
+2026-04-12 21:00:33 | INFO | [OK] /home/lky/data/xBD/xBD_list/val_all.txt | val list
+2026-04-12 21:00:34 | INFO | train manifest source=list valid=2799 missing=0 missing_by_type={}
+2026-04-12 21:00:34 | INFO | val manifest source=list valid=933 missing=0 missing_by_type={}

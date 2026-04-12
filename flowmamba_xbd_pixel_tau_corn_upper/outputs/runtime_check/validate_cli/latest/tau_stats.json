@@ -1,0 +1,38 @@
+{
+  "mean": 0.029999999329447746,
+  "std": 0.0,
+  "min": 0.029999999329447746,
+  "max": 0.029999999329447746,
+  "corr_tau_difficulty": 0.0,
+  "corr_raw_tau_difficulty": 0.33739548921585083,
+  "tau_phase_counts": {
+    "fixed_warmup": 1
+  },
+  "tau_by_difficulty_bin": [
+    {
+      "bin": 0,
+      "count": 0,
+      "tau_mean": 0.0
+    },
+    {
+      "bin": 1,
+      "count": 0,
+      "tau_mean": 0.0
+    },
+    {
+      "bin": 2,
+      "count": 0,
+      "tau_mean": 0.0
+    },
+    {
+      "bin": 3,
+      "count": 1297,
+      "tau_mean": 0.029824232682585716
+    },
+    {
+      "bin": 4,
+      "count": 0,
+      "tau_mean": 0.0
+    }
+  ]
+}

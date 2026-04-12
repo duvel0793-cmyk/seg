@@ -1,0 +1,4 @@
+2026-04-12 21:03:38 | INFO | Loaded checkpoint epoch=0 from outputs/runtime_check/checkpoints/latest.pth
+2026-04-12 21:03:38 | INFO | backbone {"backend_name": "vmamba", "backend_reason": "Loaded VSSM from /home/lky/code/VMamba", "feature_channels": [96, 192, 384, 768], "feature_strides": [], "matched_pretrained_keys": 0, "pretrained_loaded": false, "pretrained_path": "/home/lky/code/flowmamba_xbd_pixel_tau_corn_upper/pretrained/vssm_small_0229_ckpt_epoch_222.pth", "pretrained_strict": false, "requested_backend": "vmamba"}
+2026-04-12 21:03:48 | INFO | F1_oa=0.0000 F1_loc=0.0000 F1_bda=0.0000 F1_subcls=[0.0, 0.0, 0.0, 0.0]
+2026-04-12 21:03:48 | INFO | Saved validation artifacts to outputs/runtime_check/validate_cli/latest

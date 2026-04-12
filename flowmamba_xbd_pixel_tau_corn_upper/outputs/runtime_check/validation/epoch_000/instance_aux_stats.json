@@ -1,0 +1,13 @@
+{
+  "valid_instances": 1,
+  "pixel_count_mean": 1251.0,
+  "pixel_count_min": 1251,
+  "pixel_count_max": 1251,
+  "label_source_counts": {
+    "polygon_subtype": 1,
+    "pixel_majority": 0
+  },
+  "pool_source_counts": {
+    "both": 1
+  }
+}

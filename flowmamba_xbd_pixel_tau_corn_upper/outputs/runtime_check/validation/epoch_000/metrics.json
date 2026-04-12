@@ -1,0 +1,20 @@
+{
+  "F1_loc": 0.0,
+  "F1_subcls": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "F1_bda": 0.0,
+  "F1_oa": 0.0,
+  "valid_building_pixels": 1297,
+  "losses": {
+    "loc_loss": 0.6218466758728027,
+    "pixel_corn_main": 0.6890086531639099,
+    "pixel_corn_soft": 0.0,
+    "tau_reg": 0.0022205261047929525,
+    "instance_corn_aux": 0.6359450817108154,
+    "total_loss": 1.4402649402618408
+  }
+}
