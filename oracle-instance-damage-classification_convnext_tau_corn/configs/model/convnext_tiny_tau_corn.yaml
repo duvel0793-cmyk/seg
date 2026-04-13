@@ -1,0 +1,20 @@
+model:
+  model_name: convnext_oracle_tau_corn
+  backbone_variant: tiny
+  num_classes: 4
+  input_size: 224
+  pretrained_path: ""
+  feature_dim: 512
+  fusion_hidden_dim: 1024
+  corn_num_classes: 4
+  tau_mode: shared
+  tau_init: 1.0
+  tau_min: 0.5
+  tau_max: 2.0
+  tau_reg_weight: 0.01
+  tau_diff_weight: 0.01
+  decode_mode: threshold_count
+  tau_log_detail: true
+  drop_path_rate: 0.1
+  layer_scale_init_value: 1.0e-6
+  head_dropout: 0.1
