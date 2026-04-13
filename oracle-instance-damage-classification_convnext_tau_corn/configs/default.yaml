@@ -1,8 +1,0 @@
-includes:
-  - model/convnext_tiny_tau_corn.yaml
-  - data/xbd_oracle_json.yaml
-  - runtime/train_runtime.yaml
-
-experiment:
-  name: oracle_instance_damage_classification_convnext_tau_corn
-
