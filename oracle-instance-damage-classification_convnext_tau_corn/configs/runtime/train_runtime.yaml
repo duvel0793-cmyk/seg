@@ -1,0 +1,14 @@
+runtime:
+  output_dir: /home/lky/code/oracle-instance-damage-classification_convnext_tau_corn/outputs
+  batch_size: 16
+  epochs: 20
+  lr: 0.0003
+  weight_decay: 0.05
+  amp: true
+  seed: 42
+  grad_clip: 1.0
+  print_freq: 20
+  save_freq: 1
+  device: cuda
+  scheduler_t_max: 20
+
