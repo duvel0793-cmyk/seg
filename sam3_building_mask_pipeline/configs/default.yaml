@@ -1,0 +1,95 @@
+paths:
+  xbd_root: /home/code/lky/data/xBD
+  sam3_repo: sam3
+  checkpoint: null
+  output_root: outputs
+
+data:
+  train_split: train
+  test_split: test
+  image_size: 1008
+  use_list_files: false
+  enable_train_aug: true
+  aug_hflip: true
+  aug_vflip: true
+  aug_rot90: true
+  aug_brightness_contrast: false
+
+model:
+  decoder_channels: 128
+  freeze_backbone: false
+  use_amp: true
+  amp_dtype: bfloat16
+  decoder_dropout: 0.1
+  use_resaspp: true
+  use_attention_fusion: true
+  use_presence_head: true
+  use_boundary_head: true
+
+system:
+  device: cuda
+  num_workers: 4
+  seed: 42
+
+train:
+  epochs: 40
+  batch_size: 4
+  lr: 0.0001
+  weight_decay: 0.0001
+  grad_clip_norm: 1.0
+  val_ratio: 0.1
+  split_seed: 42
+  pos_weight: 2.0
+  tversky_alpha: 0.35
+  tversky_beta: 0.65
+  small_fg_ratio_thr: 0.01
+  empty_fg_boost: 1.35
+  small_fg_boost: 1.25
+  boundary_weight: 1.0
+  boundary_kernel_size: 5
+  boundary_aux_weight: 0.20
+  presence_aux_weight: 0.05
+  presence_empty_weight: 1.50
+  presence_small_weight: 1.15
+  stage1_freeze_backbone_epochs: 3
+  backbone_lr_scale: 0.1
+  enable_scheduler: true
+  scheduler_type: plateau
+  scheduler_monitor: val_iou
+  scheduler_mode: max
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  scheduler_threshold: 0.001
+  scheduler_min_lr_backbone: 0.000001
+  scheduler_min_lr_decoder: 0.00001
+  enable_early_stopping: true
+  early_stopping_patience: 5
+  early_stopping_min_delta: 0.001
+  early_stopping_start_epoch: 8
+  enable_weighted_sampler: true
+  sample_weight_empty: 1.50
+  sample_weight_small: 1.25
+  sample_weight_medium: 1.00
+  sample_weight_large: 0.90
+  bce_weight: 1.0
+  dice_weight: 1.0
+  log_interval: 20
+  resume: null
+
+eval:
+  batch_size: 4
+  threshold: 0.5
+  save_pred_masks: true
+  save_visualizations: true
+  eval_split: test
+  enable_tta: false
+  tta_hflip: true
+  tta_vflip: true
+  tta_rot90: true
+  enable_threshold_sweep: false
+  threshold_candidates: [0.35, 0.40, 0.45, 0.50, 0.55, 0.60]
+  threshold_json: null
+  postprocess_json: null
+  enable_postprocess: true
+  min_component_area: 16
+  max_hole_area: 16

@@ -1,0 +1,14 @@
+paths:
+  checkpoint: outputs/best_model.pth
+
+eval:
+  eval_split: test
+  save_pred_masks: true
+  threshold: 0.5
+  enable_tta: false
+  enable_threshold_sweep: false
+  threshold_candidates: [0.45, 0.50, 0.55, 0.60, 0.65]
+  threshold_json: null
+  enable_postprocess: true
+  min_component_area: 64
+  max_hole_area: 16

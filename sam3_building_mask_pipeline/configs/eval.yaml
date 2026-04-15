@@ -1,0 +1,12 @@
+eval:
+  batch_size: 4
+  threshold: 0.5
+  save_pred_masks: true
+  save_visualizations: true
+  eval_split: test
+  enable_tta: false
+  enable_postprocess: true
+
+
+paths:
+  checkpoint: outputs/xbd_sam3_train/best_model.pth
