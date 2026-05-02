@@ -1,9 +1,0 @@
-torch
-torchvision
-timm>=1.0.0
-numpy
-Pillow
-PyYAML
-matplotlib
-scikit-learn
-tqdm
