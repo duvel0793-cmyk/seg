@@ -68,7 +68,7 @@ model:
   use_structural_two_stage_head: true
   structural_two_stage_hidden_dim: 768
   structural_two_stage_dropout: 0.1
-  structural_two_stage_use_for_prediction: true
+  structural_two_stage_use_for_prediction: false
   structural_two_stage_prob_mix_weight: 0.0
   use_severity_aware_scale_router: false
   tight_token_count: 8
