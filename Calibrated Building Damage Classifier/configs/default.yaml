@@ -1,0 +1,205 @@
+project_name: calibrated-building-damage-classifier
+seed: 42
+
+dataset:
+  root_dir: /home/lky/data/xBD
+  train_list: /home/lky/data/xBD/xBD_list/train_all.txt
+  val_list: /home/lky/data/xBD/xBD_list/val_all.txt
+  test_list: /home/lky/data/xBD/xBD_list/test_all.txt
+  instance_source: gt_json
+  allow_tier3: false
+  use_multi_context: true
+  image_size: 224
+  image_size_tight: 224
+  image_size_context: 224
+  image_size_neighborhood: 256
+  tight_padding: 0.10
+  context_scale: 1.75
+  neighborhood_crop_size: 512
+  context_ratio: 0.25
+  min_polygon_area: 16.0
+  min_mask_pixels: 16
+  max_out_of_bound_ratio: 0.4
+  cache_dir: ./cache
+
+augmentation:
+  hflip_prob: 0.5
+  vflip_prob: 0.5
+  rotate90_prob: 0.5
+  random_resized_crop_prob: 0.5
+  random_resized_crop_scale: [0.9, 1.0]
+  random_resized_crop_ratio: [0.95, 1.05]
+  min_mask_retention: 0.75
+  color_jitter_prob: 0.6
+  brightness: 0.15
+  contrast: 0.15
+  saturation: 0.1
+  hue: 0.02
+  context_dropout_prob: 0.2
+  context_blur_prob: 0.2
+  context_grayscale_prob: 0.1
+  context_noise_prob: 0.05
+  context_mix_prob: 0.0
+  context_edge_soften_pixels: 4
+  context_dilate_pixels: 3
+  context_apply_to_pre_and_post_independently: false
+  context_preserve_instance_strictly: true
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+model:
+  model_type: damage_instance_classifier
+  backbone_name: convnextv2_tiny.fcmae_ft_in22k_in1k
+  classifier_type: corn
+  pretrained: true
+  input_mode: rgb
+  feature_dim: 256
+  alignment_type: residual_gate
+  use_multi_context_model: true
+  token_count: 12
+  token_mixer_layers: 2
+  token_mixer_heads: 4
+  tight_token_count: 8
+  context_token_count: 8
+  neighborhood_token_count: 12
+  local_attention_heads: 4
+  local_attention_layers: 2
+  tight_window_size: 7
+  context_window_size: 7
+  neighborhood_window_size: 8
+  use_tight_branch: true
+  use_context_branch: true
+  use_neighborhood_scale: true
+  use_local_attention: true
+  use_cross_scale_attention: true
+  cross_scale_heads: 4
+  cross_scale_layers: 2
+  cross_scale_dropout: 0.1
+  cross_scale_layerscale_init: 1.0e-3
+  cross_scale_residual_max: 0.3
+  context_dropout_prob: 0.20
+  neighborhood_dropout_prob: 0.40
+  safe_multicontext_mode: true
+  enable_neighborhood_graph: false
+  graph_k_neighbors: 6
+  graph_layers: 1
+  graph_hidden_dim: 256
+  graph_attention_heads: 4
+  graph_use_distance_bias: true
+  neighborhood_branch_gate_init: -4.0
+  neighborhood_residual_scale_init: 0.02
+  neighborhood_residual_scale_max: 0.20
+  neighborhood_aux_enabled: false
+  dropout: 0.2
+  use_change_suppression: true
+  change_block_channels: 256
+  enable_pseudo_suppression: true
+  fuse_change_to_tokens: true
+  change_residual_scale: 0.2
+  change_gate_init_gamma: 0.1
+  gate_temperature: 2.0
+  gate_bias_init: -2.0
+  neighborhood_gate_bias_init: -4.0
+  neighborhood_gate_temperature: 3.0
+  enable_severity_aux: true
+  freeze_neighborhood_strength_after_epoch: 7
+  neighborhood_branch_gate_max: 0.04
+
+loss:
+  name: corn
+  probability_eps: 1.0e-6
+  loss_damage_aux_weight: 0.05
+  loss_damage_tight_weight: 0.02
+  loss_damage_context_weight: 0.01
+  loss_damage_neighborhood_weight: 0.00
+  loss_severity_aux_weight: 0.02
+  loss_unchanged_weight: 0.02
+  loss_gate_bg_weight: 0.01
+  loss_gate_contrast_weight: 0.02
+  tight_gate_bg_weight: 0.002
+  tight_gate_contrast_weight: 0.005
+  context_gate_bg_weight: 0.001
+  context_gate_contrast_weight: 0.002
+  neighborhood_gate_bg_weight: 0.000
+  neighborhood_gate_contrast_weight: 0.000
+  loss_corn_mono_weight: 0.0
+  gate_contrast_margin: 0.15
+  tight_gate_contrast_margin: 0.15
+  context_gate_contrast_margin: 0.08
+  neighborhood_gate_contrast_margin: 0.03
+  damage_aux_mode: instance_weak
+  no_damage_label_id: 0
+  graph_consistency_weight: 0.000
+  enable_ordinal_adjacent_smoothing: true
+  ordinal_smoothing: 0.05
+
+optimizer:
+  name: adamw
+  lr: 1.0e-4
+  backbone_lr: 3.0e-5
+  new_module_lr: 1.0e-4
+  weight_decay: 1.0e-4
+
+scheduler:
+  name: warmup_cosine
+  warmup_epochs: 5
+  min_lr_ratio: 0.01
+
+training:
+  batch_size: 4
+  epochs: 50
+  num_workers: 8
+  amp_enabled: true
+  amp_dtype: auto
+  grad_scaler_init_scale: 4096.0
+  grad_scaler_growth_interval: 2000
+  max_grad_norm: 0.5
+  finite_check_enabled: true
+  early_stop_metric: macro_f1
+  early_stop_patience: 8
+  save_best_macro_f1: true
+  save_best_qwk: true
+  save_best_far_error: true
+  composite_alpha_qwk: 0.15
+  composite_beta_far_error: 0.1
+  ema_enabled: true
+  ema_decay: 0.999
+
+eval:
+  split_name: val
+  batch_size: 4
+  num_workers: 8
+
+bridge:
+  split_name: val
+  batch_size: 4
+  num_workers: 8
+  target_source: png
+  use_official_target_png: true
+  save_pixel_predictions: true
+  save_visuals: true
+  save_official_style_pngs: true
+  overlap_policy: max_label
+  output_subdir: bridge_pixel_eval
+
+logging:
+  output_root: ./outputs
+  exp_name: default
+  log_feature_stats: true
+  log_gate_stats: true
+  log_severity_aux_stats: true
+  log_scale_metrics: true
+  log_cross_scale_attention: true
+  log_graph_metrics: true
+  log_context_diagnostic: true
+
+sampler:
+  enable_class_boost: true
+  minor_boost: 1.20
+  major_boost: 1.05
+  destroyed_boost: 1.00
+  no_damage_boost: 1.00
+
+ablation:
+  run_name: convnextv2_corn_tokenagg_cachlite
+  keep_pixel_bridge_eval: true

@@ -1,0 +1,16 @@
+model:
+  use_change_suppression: true
+  enable_pseudo_suppression: true
+  fuse_change_to_tokens: true
+
+loss:
+  loss_damage_aux_weight: 0.0
+  loss_unchanged_weight: 0.0
+  lambda_corn_mono: 0.0
+
+logging:
+  exp_name: pseudo_suppression_tokenagg_corn
+
+ablation:
+  run_name: pseudo_suppression
+  keep_pixel_bridge_eval: true
