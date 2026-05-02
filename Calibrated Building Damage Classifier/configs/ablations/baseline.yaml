@@ -1,0 +1,16 @@
+model:
+  use_change_suppression: false
+  enable_pseudo_suppression: false
+  fuse_change_to_tokens: false
+
+loss:
+  loss_damage_aux_weight: 0.0
+  loss_unchanged_weight: 0.0
+  loss_corn_mono_weight: 0.0
+
+logging:
+  exp_name: baseline_tokenagg_corn
+
+ablation:
+  run_name: baseline
+  keep_pixel_bridge_eval: true
