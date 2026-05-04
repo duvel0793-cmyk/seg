@@ -1,0 +1,134 @@
+project:
+  name: dabqn_stage1_localization_fast
+  output_dir: /home/lky/code/dabqn_evidence_damage_classifier/outputs/stage1_localization_fast
+
+data:
+  root: /home/lky/data/xBD
+  train_list: /home/lky/data/xBD/xBD_list/train_all.txt
+  val_list: /home/lky/data/xBD/xBD_list/val_all.txt
+  test_list: /home/lky/data/xBD/xBD_list/test_all.txt
+  train_mode: random_patch
+  patch_size: 512
+  image_size: 512
+  adaptive_patch_sizes: [512, 384, 256]
+  dense_shrink_enabled: true
+  max_instances_per_patch: 120
+  min_instances_per_patch: 1
+  dense_patch_retry: 30
+  dense_fallback_policy: resample_shrink_then_center_keep
+  fallback_keep_policy: center_priority
+  min_area_after_clip: 4
+  allow_empty_patch: true
+  empty_patch_ratio: 0.1
+
+dataset:
+  train_mode: random_patch
+  patch_size: 512
+  max_instances_per_patch: 120
+  min_instances_per_patch: 1
+  allow_empty_patch: true
+  empty_patch_ratio: 0.1
+  dense_patch_retry: 20
+  min_polygon_area: 16.0
+  min_mask_pixels: 8
+  allow_tier3: false
+
+augmentation:
+  hflip_prob: 0.5
+  vflip_prob: 0.1
+  rotate90_prob: 0.5
+  color_jitter_prob: 0.3
+  brightness: 0.12
+  contrast: 0.12
+  saturation: 0.08
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+model:
+  backbone: convnextv2_tiny.fcmae_ft_in22k_in1k
+  pretrained: true
+  localization_pre_only: true
+  return_full_masks_train: false
+  hidden_dim: 192
+  pixel_dim: 192
+  num_queries: 120
+  query_decoder_layers: 2
+  query_decoder_heads: 6
+  dropout: 0.1
+  crop_feature_size: 7
+  damage_branch_type: mask_pool
+  damage_head_type: corn
+  use_gt_mask_warmup: false
+  gt_warmup_epochs: 0
+  damage_scale_factors:
+    tight: 1.05
+    context: 2.0
+    neighborhood: 4.0
+
+matcher:
+  cost_objectness: 1.0
+  cost_box_l1: 5.0
+  cost_giou: 2.0
+  cost_mask: 2.0
+  cost_dice: 5.0
+  add_damage_cost: false
+  cost_damage: 0.0
+
+loss:
+  obj_weight: 1.0
+  box_l1_weight: 5.0
+  giou_weight: 2.0
+  mask_bce_weight: 2.0
+  dice_weight: 5.0
+  mask_loss_source: lowres
+  damage_weight: 0.0
+  eos_coef: 0.1
+
+training:
+  stage: localization
+  epochs: 12
+  batch_size: 2
+  num_workers: 4
+  init_checkpoint: ""
+  lr: 1.0e-4
+  backbone_lr: 3.0e-5
+  new_module_lr: 1.0e-4
+  weight_decay: 0.05
+  warmup_epochs: 2
+  min_lr_ratio: 0.01
+  grad_clip_norm: 1.0
+  eval_interval: 1
+  full_eval_interval: 4
+  fast_val_max_images: 30
+  skip_full_eval_until_epoch: 2
+  amp: true
+  amp_dtype: bf16
+  ema_enabled: false
+  ema_decay: 0.999
+  seed: 42
+  freeze_backbone: false
+  freeze_localizer: false
+
+evaluation:
+  split: val
+  batch_size: 2
+  num_workers: 2
+  val_mode: sliding_window
+  patch_size: 512
+  stride: 384
+  merge_predictions: true
+  nms_mode: mask_box_containment
+  apply_class_agnostic_nms: true
+  mask_nms_iou: 0.45
+  box_nms_iou: 0.55
+  containment_nms_thr: 0.75
+  center_distance_ratio: 0.35
+  use_patch_center_score: true
+  patch_border_penalty: 0.85
+  border_margin: 32
+  max_predictions_per_image: 1000
+  need_damage_metrics: false
+  objectness_threshold: 0.35
+  mask_threshold: 0.5
+  top_k_predictions: 300
+  save_best_by: localization_f1
