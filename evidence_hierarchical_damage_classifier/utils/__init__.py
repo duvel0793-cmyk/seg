@@ -1,4 +1,0 @@
-from .misc import CLASS_NAMES, INDEX_TO_LABEL, LABEL_TO_INDEX
-
-__all__ = ["CLASS_NAMES", "INDEX_TO_LABEL", "LABEL_TO_INDEX"]
-
