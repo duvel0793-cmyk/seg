@@ -1,0 +1,14 @@
+project:
+  name: evidence_hierarchical_damage_classifier
+  output_dir: outputs/ablation_no_hierarchy
+
+model:
+  use_hierarchical_head: false
+  use_evidence_head: true
+
+loss:
+  binary_damage_weight: 0.0
+  severity_corn_weight: 0.0
+  final_ce_weight: 0.5
+  global_corn_aux_weight: 1.0
+

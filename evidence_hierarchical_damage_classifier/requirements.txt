@@ -1,0 +1,10 @@
+torch
+torchvision
+timm>=1.0.0
+numpy
+Pillow
+PyYAML
+scikit-learn
+tqdm
+safetensors
+

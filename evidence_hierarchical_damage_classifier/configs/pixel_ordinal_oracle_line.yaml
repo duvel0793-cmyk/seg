@@ -1,0 +1,159 @@
+project:
+  name: pixel_ordinal_oracle_line
+  output_dir: outputs/pixel_ordinal_oracle_line
+
+data:
+  root: /home/lky/data/xBD
+  train_list: /home/lky/data/xBD/xBD_list/train_all.txt
+  val_list: /home/lky/data/xBD/xBD_list/val_all.txt
+  use_pixel_targets: true
+  ignore_index: 255
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+
+dataset:
+  input_mode: rgbm
+  crop_scales:
+    tight:
+      enabled: true
+      output_size: 256
+      context_factor: 1.05
+    context:
+      enabled: true
+      output_size: 192
+      context_factor: 2.0
+    neighborhood:
+      enabled: false
+      output_size: 224
+      context_factor: 4.0
+
+model:
+  backbone: convnextv2_tiny.fcmae_ft_in22k_in1k
+  pretrained: true
+  input_mode: rgbm
+  feature_dim: 768
+  token_dim: 256
+  evidence_dim: 128
+  dropout: 0.1
+  use_tight_branch: true
+  use_context_branch: true
+  use_neighborhood_branch: false
+  enable_alignment: false
+  enable_prepost_fusion: true
+  fusion_mode: simple_diff_concat
+  enable_damage_aware_block: false
+  enable_change_gate: false
+  use_cross_scale_attention: true
+  cross_scale_heads: 4
+  cross_scale_layers: 1
+  cross_scale_fusion_mode: tight_query_context_kv
+  use_evidence_head: false
+  evidence_fusion_mode: none
+  enable_feature_calibration: false
+  use_hierarchical_head: false
+  head_type: flat_corn
+  use_global_corn_aux: false
+  enable_minor_boundary_aux: true
+  use_structural_two_stage_head: true
+  structural_two_stage_hidden_dim: 768
+  structural_two_stage_dropout: 0.1
+  structural_two_stage_use_for_prediction: false
+  structural_two_stage_prob_mix_weight: 0.0
+  use_severity_aware_scale_router: true
+  scale_router_hidden_dim: 512
+  scale_router_dropout: 0.1
+  scale_router_use_for_prediction: false
+  scale_router_prob_mix_weight: 0.0
+  scale_router_init_gates: [0.5, 0.7, 0.3, 0.25]
+  tight_token_count: 8
+  context_token_count: 12
+  neighborhood_token_count: 12
+  local_attention_heads: 4
+  local_attention_layers: 1
+  local_attention_layers_tight: 0
+  local_attention_layers_context: 1
+  local_attention_layers_neighborhood: 0
+  tight_window_size: 7
+  context_window_size: 7
+  neighborhood_window_size: 8
+  enable_pixel_ordinal_line: true
+  pixel_line_feature_source: tight
+  pixel_line_head_type: two_stage_ordinal
+  pixel_line_hidden_dim: 256
+  pixel_line_dropout: 0.1
+  pixel_line_aggregation: mean_topk_mix
+  pixel_line_topk_ratio: 0.2
+  pixel_line_mean_weight: 0.7
+  pixel_line_topk_weight: 0.3
+  pixel_line_use_for_final_prediction: false
+  pixel_line_prob_mix_weight: 0.0
+
+loss:
+  corn_weight: 1.0
+  final_ce_weight: 0.3
+  final_class_weight_mode: dataset_sqrt_inverse
+  binary_damage_weight: 0.0
+  severity_corn_weight: 0.0
+  global_corn_aux_weight: 0.0
+  evidence_pixel_weight: 0.0
+  evidence_mil_weight: 0.0
+  severity_map_weight: 0.0
+  damage_aux_weight: 0.0
+  minor_no_aux_weight: 0.10
+  minor_major_aux_weight: 0.05
+  structural_binary_weight: 0.10
+  low_stage_weight: 0.05
+  high_stage_weight: 0.05
+  scale_router_ce_weight: 0.10
+  unchanged_weight: 0.0
+  gate_bg_weight: 0.0
+  gate_contrast_weight: 0.0
+  pixel_line:
+    enabled: true
+    agg_weight: 0.5
+    dense_weight: 0.05
+    entropy_weight: 0.0
+    severity_weight: 1.0
+    binary_weight: 1.0
+    ignore_mask_outside: true
+    normalize_by_mask_area: true
+
+experiment:
+  mode: pixel_ordinal
+  train_target: pixel
+  freeze_instance_head: true
+  freeze_backbone: false
+
+training:
+  epochs: 20
+  batch_size: 16
+  num_workers: 8
+  optimizer: adamw
+  backbone_lr: 5.0e-5
+  new_module_lr: 2.0e-4
+  weight_decay: 0.05
+  warmup_epochs: 2
+  scheduler: warmup_cosine
+  min_lr_ratio: 0.01
+  grad_clip_norm: 1.0
+  amp: true
+  amp_dtype: bf16
+  ema_enabled: true
+  ema_decay: 0.999
+  channels_last: true
+  early_stop_metric: ema_pixel_agg_macro_f1
+  early_stop_patience: 6
+  seed: 42
+
+eval:
+  batch_size: 8
+  num_workers: 8
+  validate_ema: true
+  validate_raw: false
+  save_best_by: ema_pixel_agg_macro_f1
+  save_diagnostics: true
+  damage_threshold_sweep: false
+  save_visuals: false
+
